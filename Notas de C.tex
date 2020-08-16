@@ -17,7 +17,7 @@
 	\maketitle
 	
 	\begin{abstract}
-		Pues estas son mis notas para aprender lenguaje de progamación `C' desde ``cero".
+		Pues estas son mis notas para aprender lenguaje de progamación `C' desde ``cero". Estas notas están respaldadas en un repositorio de Github.
 	\end{abstract}
 	
 	\section{Introducción}
@@ -1333,7 +1333,33 @@
 	
 	\subsection{Conceptual contra real}
 	
-	Tan lejos como le concierne al programador, todo I/O pasa a traves de streams, que son las secuencias de caracteres. Todos los streams son lo mismo. el sistema de archivos une un stream con un archivo. En C, un archivo es cualquier dispositivo externo, capaz de I/O
+	Tan lejos como le concierne al programador, todo I/O pasa a traves de streams, que son las secuencias de caracteres. Todos los streams son lo mismo. el sistema de archivos une un stream con un archivo. En C, un archivo es cualquier dispositivo externo, capaz de I/O.
+	
+	\subsection{Consola I/O}
+	
+	Esto se refiere a operaciones que ocurren en el teclado y monitor de tu computadora.
+	
+	\subsubsection{Leyendo y escribiendo caracteres}
+	
+	Las funciones de consola I/O mas simples son \textbf{getche()}, que lee un caracter desde el teclado y \textbf{putchar()}, que imprime un caracter en la pantalla. La funcion \textbf{getche()} espera hasta que una tecla es presionada y entonces retorna un valor. La tecla presionada es ``echoed" a la pantalla automaticamente. La funcion \textbf{putchar()} escribirá un caracter argummento a la pantalla en la posicion actual del cursor. El prototipo de \textbf{putchar()} y \textbf{getche()} es este.\\
+	
+	int getche(void);\\
+	
+	int putchar(int c);\\
+	
+	...$\backslash$learn c$\backslash$c	putchar.c
+	
+	El archivo de cabecera de \textbf{getche()} es CONIO.H y el de \textbf{putchar()} es STDIO.H, El archivo de cabecera de la función \textbf{islower()} es CTYPE.H. Ejemplo:\\
+	
+	...$\backslash$learn c$\backslash$c case\_switcher.c\\
+	
+	Hay 2 importantes variaciones en \textbf{getche()}. El primero es \textbf{getchar()}, que es la función original basado en UNIX de ingresar caracteres. El problema con \textbf{getchar()} es que se cicla hasta que se ingresa un carácter, por ello su uso no es recomendado.
+	
+	la segunda y mas útil variación de \textbf{getche()} es \textbf{getch()}, que opera precisamente como \textbf{getche()}, excepto que el carácter no es impreso en la pantalla.
+	
+	\subsubsection{Leyendo y escribiendo cadenas}
+	
+	
 	
 	\section{Operador SizeOf}
 	
