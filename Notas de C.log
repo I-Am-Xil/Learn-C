@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.15)  16 AUG 2020 11:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.15)  16 AUG 2020 14:19
 entering extended mode
 **"./Notas de C.tex"
 ("Notas de C.tex"
@@ -1091,18 +1091,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1354--1355
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1370--1371
-
- []
-
 [23]
 Underfull \hbox (badness 10000) in paragraph at lines 1372--1373
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1402--1403
+Underfull \hbox (badness 10000) in paragraph at lines 1374--1375
 
  []
 
@@ -1112,34 +1107,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 1404--1405
  []
 
 
-Overfull \hbox (19.2927pt too wide) in paragraph at lines 1426--1427
+Underfull \hbox (badness 10000) in paragraph at lines 1406--1407
+
+ []
+
+
+Overfull \hbox (19.2927pt too wide) in paragraph at lines 1428--1429
 []\OT1/cmr/m/n/10 printf$($``El pe-so de$ $%s es$ $%.2f kg y tiene$ $%d me-ses 
 $\OMS/cmsy/m/n/10 n$\OT1/cmr/m/n/10 n",perro2.nombre,perro2.peso,perro2.edadmes
 es); 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1434--1435
+Underfull \hbox (badness 10000) in paragraph at lines 1436--1437
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 1493--1494
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1495--1496
 
  []
 
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 1571--1572
+
+Underfull \hbox (badness 10000) in paragraph at lines 1497--1498
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1580--1581
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 1573--1574
 
  []
 
@@ -1154,22 +1149,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 1584--1585
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1612--1613
+Underfull \hbox (badness 10000) in paragraph at lines 1586--1587
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1615--1616
+Underfull \hbox (badness 10000) in paragraph at lines 1614--1615
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1617--1618
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 1679--1680
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1691--1692
+Underfull \hbox (badness 10000) in paragraph at lines 1681--1682
 
  []
 
@@ -1178,18 +1173,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 1693--1694
 
  []
 
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 1763--1764
+
+Underfull \hbox (badness 10000) in paragraph at lines 1695--1696
 
  []
 
-
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 1765--1766
 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1767--1768
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1769--1770
 
  []
 
@@ -1216,7 +1216,7 @@ s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmti10.pfb>
-Output written on "Notas de C.pdf" (29 pages, 225772 bytes).
+Output written on "Notas de C.pdf" (29 pages, 225935 bytes).
 PDF statistics:
  143 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
