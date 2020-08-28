@@ -23,7 +23,7 @@ int factor(double x)
 	int i = 2;
 	while (i*i < x)
 		{
-			while (fmod(x, i) == 0 && i > 2)
+			while (fmod(x, i) == 0 && i > 1)
 			{
 				x = x / i;
 			}

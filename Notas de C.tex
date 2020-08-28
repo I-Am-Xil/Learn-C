@@ -1359,9 +1359,269 @@
 	
 	\subsubsection{Leyendo y escribiendo cadenas}
 	
-	El siguiente pasao en terminos de complexidad y poder, estan las funciones \textbf{gets()} y \textbf{puts()}. Estos permiten leer y escribir cadenas de caracteres en la consola.
+	El siguiente paso en términos de complejidad y poder, están las funciones \textbf{gets()} y \textbf{puts()}. Estos permiten leer y escribir cadenas de caracteres en la consola.
 	
-	La funcion \textbf{gets()} lee una cadena de caracteres entradas 
+	La función \textbf{gets()} lee una cadena de caracteres entradas y las escribe en la direccion apuntada por su argumento apuntador. El prototipo de \textbf{gets()} es:\\
+	
+	char *gets(char *s);\\
+	
+	La función gets retorna un puntero de \textbf{s}
+	
+	la función \textbf{puts()} escribe el argumento de su cadena en pantalla seguido por  una nueva linea. Su prototipo es:\\
+	
+	int puts(char *s);\\
+	
+	Reconoce los mismos códigos backslash como \textbf{printf()} como ''$\backslash$t" para tab. una llamada de \textbf{puts()} requiere mucho menos sobrecarga que la misma llamada de \textbf{printf()} porque \textbf{puts()} solo puede imprimir una cadena de caracteres- no puede imprimir números o hacer conversiones de formato. Por lo tanto la funcion \textbf{puts()} toma menos espacio y corre mas rapido que \textbf{printf()}. Por ejemplo:\\
+	
+	puts(''hello");\\
+	
+	La funcion \textbf{puts()} usa el archivo de cabecera STDIO.H
+	
+	\subsection{Consola I/O formateada}
+	
+	El prototipo de \textbf{printf()} es:\\
+	
+	int printf(char *control\_string,...)\\
+	
+	Notese los 3 puntos En el prototipo de \textbf{printf()}. cuando una función puede tomar un numero variable de argumentos, entonces su prototipo usa los tres puntos para especificar esto.
+	
+	En la función \textbf{scanf()} las cadenas serán leídos en arreglos de caracteres, y el nombre de un arreglo sin algún indice, es la dirección del primer elemento del arreglo. Entonces para leer una cadena en la dirección del arreglo de la caracteres, podrías usar lo siguiente:\\
+	
+	scanf(''\%s", address);\\
+	
+	En este caso \textbf{address} es ya un puntero, y no necesita ser precedido por el operador \&.
+	
+	Los datos de entrada deben ser separados por espacios, tabs o nuevas lineas. puntuación como comas, semi-columnas y similares, no cuentan como separadores. Esto significa que:\\
+	
+	scanf(''\%d\%d", \&r, \&c);\\
+	
+	Aceptará una entrada de 10 20, pero fallará con 10,20\\
+	
+	La función \textbf{scanf()} incluye un a característica muy poderosa llamada \textit{scanset}. un scanset define una lista de caracteres que serán alineados por \textbf{scanf()}. La función \textbf{scanf()} seguirá leyendo caracteres mientras estén en el scanset. Tan pronto como un carácter de entrada no se alinea con alguno del scanset, \textbf{scanf()} se mueve hacia el siguiente. Un scanset es se define poniendo una lista de los caracteres que quieras escanear dentro de paréntesis cuadrados. El inicio de los paréntesis cuadrados tiene como prefijo un signo de porcentaje, por ejemplo este scanset le dice a \textbf{scanf()} leer solo los dígitos desde 0 hasta 9:\\
+	
+	\%[1234567890] Esta declaración solo permitirá que esta cadena sea leída por la variable indicada\\
+	
+	Puedes especificar un rango dentro de una scanset usando un guion medio. por ejemplo:\\
+	
+	\%[A-Z]\\
+	
+	Esto le dice a \textbf{scanf()} que solo acepte caracteres desde A hasta Z. Ademas se puede especificar mas de un rango en el scanset. Por ejemplo:\\
+	
+	...$\backslash$learn c$\backslash$c scanf\_range.c\\
+	
+	Algo importante de recordar es que scanset es case-sensitive, entonces si quieres poner mayúsculas y minúsculas individualmente.
+	
+	\subsection{El sistema ANSI I/O}
+	
+	El sistema ANSI I/O está compuesta de varias funciones interrelacionadas. Estas funciones requieren que el archivo de cabecera STDIO.H son incluidas por cualquier programa en donde son usadas.
+	
+	\subsubsection{El apuntador de archivo}
+	
+	Un común hilo que ata el sistema ANSI C I/O es el apuntador de archivo. Un apuntador e archivo es un puntero a información que define varias cosas sobre el archivo, incluyendo su nombre, estado y actual posición. En esencia, un archivo puntero identifica un archivo en disco duro y es usado por un stream asociado con el para la operación directa de funciones ANSI C I/O. un archivo puntero es un puntero de variable tipo \textbf{FILE}, que esta definido en STDIO.H. Para leer o escribir archivos, tu programa necesitará usar punteros de archivo. Para obtener variables puntero de archivo se utiliza una sentencia como la siguiente:\\
+	
+	FILE *fp:\\
+	
+	\begin{tabular}{l|l}
+		\textbf{Function} & \textbf{Operation}\\
+		\hline
+		fopen() & Opens a stream\\[.7ex]
+		fclose() & Closes a stream\\[.7ex]
+		putc() & Writes a character on a stream\\[.7ex]
+		getc() & Reads a character from a stream\\[.7ex]
+		fseek() & Seeks to the specified sbyte in a stream\\[.7ex]
+		fprintf() & Is to stream what \textbf{printf()} is to the console\\[.7ex]
+		fscanf() & Is to stream what \textbf{scanf()} is to the console\\[.7ex]
+		feof() & Returns true if the end of the file is reached\\[.7ex]
+		ferror() & Returns true if an error has ocurred\\[.7ex]
+		fread() & Reads a block of data from a stream\\[.7ex]
+		fwrite() & Writes a block of data from a stream\\[.7ex]
+		rewind() & Resets the file position locator to the begining of the file\\[.7ex]
+		remove() & Erates a file
+	\end{tabular}
+	
+	\subsubsection{Abriendo un archivo}
+	
+	La funcion \textbf{fopen()} sirve a dos propósitos. Primero abre un stream para usarlo y lo conecta a un archivo con ese stream. Segundo, retorna el archivo puntero asociado con ese archivo. Mas comunmenteel archivo es de disco. la funcion \textbf{fopen()} tiene este prototipo:\\
+	
+	FILE *fopen(char *nombre-archivo, char *modo);\\
+	
+	Donde \textit{modo} es una cadena conteniendo abierto el estado deseado. El nombre de archivo debe ser una cadena de caracteres que comprometa un nombre de archivo valido para el sistema operativo y debe incluir especificación de dirección
+	
+	\begin{tabular}{l|l}
+		\textbf{Mode} & \textbf{Meaning}\\[.7ex]
+		\hline
+		''r" & Open a file for reading\\[.7ex]
+		''w" & Create a file for writing\\[.7ex]
+		''a" & Append to a file\\[.7ex]
+		''rb" & Open a binary file for reading\\[.7ex]
+		''wb" & Create a binary file for writing\\[.7ex]
+		''ab" & Append to a binary file\\[.7ex]
+		''r+" & Open a file for write/read\\[.7ex]
+		''w+" & Create a file for read/write\\[.7ex]
+		''a+" & Append or create a file fore read/write\\[.7ex]
+		''r+b" & Open a binary file for read/write\\[.7ex]
+		''w+b" & Create a binary file for read/write\\[.7ex]
+		''a+b" & Append or create a binary file fore read/write\\[.7ex]
+		''rt" & Open a text file for reading\\[.7ex]
+		''wt" & Create a text file for writing\\[.7ex]
+		''at" & Append to a text file\\[.7ex]
+		''r+t" & Open a text file for read/write\\[.7ex]
+		''w+t" & Create a text file for read/write\\[.7ex]
+		''a+t" & Append or create a text file for read/write
+	\end{tabular}
+	
+	Si quisieras abrir un archivo para escribir con nombre \textbf{test} entonces escribirias:\\
+	
+	FILE *fp;\\
+	
+	fp = fopen(''test", ''w");\\
+	
+	Sin embargo, usualmente lo varas escrito así:\\
+	
+	FILE *fp\\
+	
+	if ((fp = fopen(''test", ''w")) == NULL)
+	
+	$\lbrace$
+	
+	puts(''cannot open file$\backslash$n");
+	
+	exit(1);
+	
+	$\rbrace$\\
+	
+	La macro \textbf{NULL} está definida en STDIO.H. Este método detecta cualquier error abriendo un archivo, por ejemplo de protegido de escritura o disco lleno antes de intentar escribir en el. Un NULL es usado porque ningún archivo puntero tendría ese valor. También está la función \textbf{exit()}. Una llamada a \textbf{exit()} causa la inmediata terminación del programa, no importa de donde es llamada la función \textbf{exit()}, tiene un prototipo (encontrada en 	STDLIB.H):\\
+	
+	void exit(int \textit{val});\\
+	
+	Este valor es retornado al sistema operativo.
+	
+	Si usas \textbf{open()} para abrir un archivo para escribir, entonces cualquier archivo preexistente por ese nombre será borrado y comenzará un nuevo archivo. Si no existe un archivo por ese nombre, entonces uno será creado. Si quieres añadir a el final de un archivo, entonces debes usar el modo ''a". Abrir un archivo para leer operaciones, requiere que el archivo exista. Si no lo hace, un error será retornado. Finalmente, si un archivo es abierto para leer/escribir operaciones, este no será borrado si existe; sin embargo, si no existe se creará uno.
+	
+	\subsubsection{Escribir un caracter}
+	
+	la función \textbf{putc()} es usada para escribir caracteres a un stream previamente abierta para escribir por la función \textbf{fopen()} la función es declarada\\
+	
+	int putc(int \textit{ch}, FILE *\textit{fp});\\
+	
+	Donde \textit{fp} es el archivo puntero retornado por \textbf{fopen()} y \textit{ch} es el carácter de salida. El archivo puntero le dice a \textbf{putc()}que archivo de disco escribir en.Por razones históricas, \textit{ch} es formalmente llamado un \textbf{int} pero solo el byte de bajo orden es usado.
+	
+	Si una operación \textbf{putc()} es un éxito entonces va a retornar el carácter escrito. En un fallo, un \textbf{EOF} es retornado. \textbf{EOF} es un macro definido en STDIO.H que significa ''End-Of-File"
+	
+	\subsubsection{Leyendo un caracter}
+	
+	la función \textbf{getc()} es usado para leer caracteres de un stream abierto en modo de lectura por \textbf{fopen()}. la función es declarada como:\\
+	
+	int get(FILE *\textit{fp});\\
+	
+	Donde \textit{fp} es un archivo puntero de tipo \textbf{FILE} retornado por \textbf{fopen()}. Por razones históricas, \textbf{getc()} retorna un entero, pero el byte de alto orden es cero.
+	
+	la función \textbf{getc()} retornará una marca \textbf{EOF} cuando el final del archivo ha sido alcanzado o un error ha ocurrido. Por lo tanto para leer un archivo de texto hasta que la marca End-Of-File es leída, puedes  usar el siguiente codigo:\\
+	
+	ch = getc(fp);\\
+	
+	while(ch != EOF) $\lbrace$
+	
+	ch = getc(fp);
+	
+	$\rbrace$
+	
+	\subsubsection{Usando feof()}
+	
+	Un archivo de sistema ANSI puede también ser operado en dato binario. Donde una archivo es abierto por entrada binaria, es posible que un valor entero igual a la marca \textbf{EOF} puede ser leído. Esto causaría la previa rutina de indicar una condición EOF aun cuando el final físico de el archivo no ha sido alcanzado. Para resolver este problema, ANSI C incluye la función \textbf{feof()}, donde es usado para determinar el final de el archivo cuando se leen datos binarios. La función \textbf{feof()} tiene este prototipo:\\
+	
+	int feof(FILE *\textit{fp});\\
+	
+	Este prototipo está en STDIO.H. Retorna true si el final del archivo ha sido alcanzado; de otra manera, cero es retornado. Por lo tanto, la siguiente rutina lee un archivo binario hasta el final de que el final del archivo es encontrado.\\
+	
+	while(!feof(fp)) ch = getc(fp);\\
+	
+	por supuesto, este mismo método puede ser aplicado para archivos de texto así como archivos binarios.
+	
+	\subsubsection{Cerrando un archivo}
+	
+	La función \textbf{fclose()} es usado para cerrar un stream que ha sido abierto por una llamada a \textbf{fopen()}. Escribe cualquier dato aun en el búfer del disco (En informática, un búfer (del inglés, buffer) es un espacio de memoria, en el que se almacenan datos de manera temporal, normalmente para un único uso su principal uso es para evitar que el programa o recurso que los requiere, ya sea hardware o software, se quede sin datos durante una transferencia de datos I/O irregular o por la velocidad del proceso.) a el archivo y hace un cierre formal a nivel de sistema operativo en el archivo. fallar en el cierre de un stream invita a todo tipo de problemas incluyendo perdida de datos, destruir archivos y posibles intermitentes errores en tu programa. \textbf{fclose()} también cierra el archivo de bloque de control asociado con el stream y lo hace posible para rehúso. Posiblemente sea necesario cerrar on archivo antes de abrir otro.
+	
+	La funcion \textbf{fclose()} es declarada como:\\
+	
+	int fclose(FILE *\textit{fp});\\
+	
+	Donde \textit{fp} es el archivo puntero retornado por la llamada a \textbf{fopen()}. Un retorno de valor cero significa un exito cerrando operacion; cualquier otro valor indica error. Puedes usar la funcion estandar \textbf{ferror()} para determinar y reportar cualquier problema. Generalmente, el unico momento \textbf{fclose()} fallará es cuando un diskette (o su analogo moderno) ha sido prematuramente removido del drive o si no queda espacio en el diskette (o su analogo moderno).
+	
+	\subsubsection{ferror() y rewind()}
+	
+	la funcion \textbf{ferror()} es usada para determinar si una operación de archivo ha producido un error. Si un archivo es abierto en modo texto y un erroe en lectura o escritura ocurre, se retorna \textbf{EOF}. se usa \textbf{ferror()} para determinar que evento pasó. La funcion \textbf{ferror()} tiene el prototipo:\\
+	
+	int ferror(FILE *\textit{fp});\\
+	
+	Donde \textit{fp} es un archivo puntero valido. Retorna true si un error ha ocurrido durante la ultima operacion de archivo; retorn falso de otra manera. Porque cada operacion de archivo hace la condicion error, \textbf{ferror()} debería ser llamada inmediatamente despues de cada operacion de archivo; de otra manera, un error puede perderse. EL prototipo para \textbf{ferror()} está en STDIO.H.
+	
+	la funcion \textbf{rewind()} reseteará el localizador de posicion de archivo a el principio de el archivo especificado como su argumento. Su prototipo es:\\
+	
+	void rewind(FILE *\textit{fp});\\
+	
+	Donde \textit{fp} es un archivo punero valido. El prototipo para \textbf{rewind()} está en STDIO.H'
+	
+	\subsubsection{Usando fopen(), getc(), putc() y fclose()}
+	
+	las funciones \textbf{fopen()}, \textbf{getc()}, \textbf{putc()} y \textbf{fclose()} comprometen el minimo set de rutinas de archivo. Un simple ejemplo de usar \textbf{fopen()}, \textbf{putc()} y \textbf{fclose()} es el programa \textbf{ktod} abajo. Lee lacarteres desde el teclado y los escribe en un archivo de disco hasta que el signo de dolar es escito. EL archivo es especificado por el comando line. Por ejemplo, si llamas este programa \textbf{ktod}, entonces escribir \textbf{ktod test} te permitirá pasar lineas de texto hacia el archivo llamado test\\
+	
+	...$\backslash$learn c$\backslash$c ktod.c\\
+	
+	El programa complementar \textbf{dtos}, leerá cualquier archivo ASCII e imprime los contenidos en la pantalla.\\
+	
+	...$\backslash$learn c$\backslash$c dtos.c\\
+	
+	El siguiente programa copiará un archivo de cualquier tipo. Notese que los archivos son abiertos en modo binario y que \textbf{feof()} es usado para checar por el final del archivo.\\
+	
+	...$\backslash$learn c$\backslash$c feof.c\\
+	
+	\subsubsection{Using get() and putw()}
+	
+	En adición a \textbf{getc()} y \textbf{putc()}, están las funciones \textbf{putw()} y \textbf{getw()} estas funciones no están definidas por el ANSI C estardar. Estas son usadas para leer y escribir enteros de y desde un archivo de disco. Estas funciones trabajan exactamente como \textbf{putc()} y \textbf{getc()} excepto que en lugar de leer o escribir un solo carácter, estas leen o escriben un entero. Estas tienen el siguiente prototipo:\\
+	
+	int putw (int i, FILE *\textit{fp});\\
+	
+	int getw(FILE *\textit{fp});\\
+	
+	El siguiente fragmento de codigo escribirá un entero a el archivo de disco puntero por \textit{fp}:\\
+	
+	putw(10, fp);\\
+	
+	los prototipos por \textbf{getw()} y \textbf{putw} estan en STDIO.H\\
+	
+	\subsubsection{fgets() y fputs()}
+	
+	El sistema ANSI de C I/O incluye dos funciones que pueden leer y escribir cadenas desde streams: \textbf{fgets()} y \textbf{fputs()}. Sus prototipos se muestran aqui.\\
+	
+	char *fputs(char *str, FILE *\textit{fp});
+	
+	char *fgets(char *str, int \textit{length}, FILE *\textit{fp});\\
+	
+	La función \textbf{fputs()} trabaja como \textbf{puts()} excepto que escribe la cadena el el stream especificado. La funcion \textbf{fgets()} lee una dadena desde el stream especificado hasta que un caracter nueva linea es leido o hasta que carecteres \textit{length-1} han sido leidos. Si una nueva liea es leida, se volverá parte de la cadena. La cadena resultante será terminacion null.
+	Los prototipos para \textbf{fgets()} y \textbf{fputs()} están en STDIO.H.
+	
+	\subsubsection{fread() y fwrite()}
+	
+	El sistema ANSI I/O provee dos funciones, llamadas \textbf{fread()} y \textbf{fwrite()}, que permiten la lectura y escritura de bloques de daos. Sus prototipos se miestran aquí:\\
+	
+	unsigned fread(void *\textit{buffer}, int \textit{num\_bytes}, int \textit{count}, FILE *\textit{fp});\\
+	
+	unsigned fwrite(void *\textit{fbuffer}, int \textit{num\_bytes}, int \textit{cout}, FILE *\textit{fp});\\
+	
+	En el caso de \textbf{fread()}, \textit{buffer} es un puntero a una región de memoria que va a recibir los datos desde el archivo. Para \textbf{fwrite()}, \textit{buffer} es un puntero a la información que será escrito en  el archivo. El numero de bytes a ser leídos o escritos es especificado por \textit{num\_bytes}. El argumento \textit{count} determina cuantos objetos pueden ser leidos o escritos. Finalmente, \textit{fp} es un archivo puntero a un stream abierto previamente. Ambas funciones tienen sus protipos en STDIO.H.
+	
+	 La funcion \textbf{fread()} retorna el numero de objetos leidos, que pueden ser menos que \textit{count} si el final de el archivo es alcanzado o un error ocurrio. La funcion \textbf{fwrite()} retorna el numero de objetos escritos. Este valor será igual a \textit{count} a no ser que un error ocurra.
+	 
+	 Mientras el archivo sea abierto como dato binario, \textbf{fread()} y \textbf{fwrite()} pueden leer y escribir cualquier tipo de informacion. Por ejemplo este programa escribe un \textbf{float} en el disco:\\
+	 
+	 ...$\backslash$learn c$\backslash$c fwrite\_fread.c\\
+	 
+	 Como este programa ilustra, el buffer puede ser y seguido es, un a simple variable. Este programa tambien  introduce otro operador de C: \textbf{sizeof}. El operador de tiempo de compilación \textbf{sizeof} retorna el tamaño en bytes de la variable o el tipo de dato que precede.
+	 
+	 una de las mas utiles aplicaciones de \textbf{fread()} y \textbf{fwrite()} involucra leer y escribir arreglos (o como verás despues, estructuras). Por ejemplo. este fragmento escribe los contenidos de un arreglo de punto flotante \textbf{sample} a el archivo \textbf{sample} usando un solo \textbf{fwrite()}:\\
+	 
+	 ...$\backslash$learn c$\backslash$c sample\_read.c
 	
 	\section{Operador SizeOf}
 	
