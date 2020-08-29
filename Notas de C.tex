@@ -1611,18 +1611,64 @@
 	
 	En el caso de \textbf{fread()}, \textit{buffer} es un puntero a una región de memoria que va a recibir los datos desde el archivo. Para \textbf{fwrite()}, \textit{buffer} es un puntero a la información que será escrito en  el archivo. El numero de bytes a ser leídos o escritos es especificado por \textit{num\_bytes}. El argumento \textit{count} determina cuantos objetos pueden ser leidos o escritos. Finalmente, \textit{fp} es un archivo puntero a un stream abierto previamente. Ambas funciones tienen sus protipos en STDIO.H.
 	
-	 La funcion \textbf{fread()} retorna el numero de objetos leidos, que pueden ser menos que \textit{count} si el final de el archivo es alcanzado o un error ocurrio. La funcion \textbf{fwrite()} retorna el numero de objetos escritos. Este valor será igual a \textit{count} a no ser que un error ocurra.
+	La funcion \textbf{fread()} retorna el numero de objetos leidos, que pueden ser menos que \textit{count} si el final de el archivo es alcanzado o un error ocurrio. La funcion \textbf{fwrite()} retorna el numero de objetos escritos. Este valor será igual a \textit{count} a no ser que un error ocurra.
 	 
-	 Mientras el archivo sea abierto como dato binario, \textbf{fread()} y \textbf{fwrite()} pueden leer y escribir cualquier tipo de informacion. Por ejemplo este programa escribe un \textbf{float} en el disco:\\
+	Mientras el archivo sea abierto como dato binario, \textbf{fread()} y \textbf{fwrite()} pueden leer y escribir cualquier tipo de informacion. Por ejemplo este programa escribe un \textbf{float} en el disco:\\
 	 
-	 ...$\backslash$learn c$\backslash$c fwrite\_fread.c\\
+	...$\backslash$learn c$\backslash$c fwrite\_fread.c\\
 	 
-	 Como este programa ilustra, el buffer puede ser y seguido es, un a simple variable. Este programa tambien  introduce otro operador de C: \textbf{sizeof}. El operador de tiempo de compilación \textbf{sizeof} retorna el tamaño en bytes de la variable o el tipo de dato que precede.
+	Como este programa ilustra, el buffer puede ser y seguido es, un a simple variable. Este programa tambien  introduce otro operador de C: \textbf{sizeof}. El operador de tiempo de compilación \textbf{sizeof} retorna el tamaño en bytes de la variable o el tipo de dato que precede.
 	 
-	 una de las mas utiles aplicaciones de \textbf{fread()} y \textbf{fwrite()} involucra leer y escribir arreglos (o como verás despues, estructuras). Por ejemplo. este fragmento escribe los contenidos de un arreglo de punto flotante \textbf{sample} a el archivo \textbf{sample} usando un solo \textbf{fwrite()}:\\
+	una de las mas utiles aplicaciones de \textbf{fread()} y \textbf{fwrite()} involucra leer y escribir arreglos (o como verás despues, estructuras). Por ejemplo. este fragmento escribe los contenidos de un arreglo de punto flotante \textbf{sample} a el archivo \textbf{sample} usando un solo \textbf{fwrite()}:\\
 	 
-	 ...$\backslash$learn c$\backslash$c sample\_read.c
+	...$\backslash$learn c$\backslash$c sample\_read.c
+	 
+	\subsubsection{fseek() y acceso aleatorio I/O}
+	 
+	Puedes hacer lectura y escritura aleatoria de operaciones usando el sistema ANSI C I/O con la ayuda de \textbf{fseek()}, que establece el localizador de posición del archivo. Su prototipo es:\\
+	 
+	int fseek(FILE *\textit{fp}, long \textit{numbytes}, int \textit{origin});\\
+	 
+	Aquí \textit{fp} es un archivo puntero retornado por una llamada a \textbf{fopen()}; \textit{numbytes} un entero long es el numero de bytes desde \textit{origin} para hacer la posicion actual; \textit{origin} es uyno de los siguientes macros definidos en STDIO.H:\\
+	 
+	\begin{tabular}{l|l|l}
+		\textbf{Origin} & \textbf{Macro Name} & \textbf{Actual Value}\\
+		\hline
+		Begining of file & SEEK\_SET & 0\\[.7ex]
+		Current position & SEEK\_CUR & 1\\[.7ex]
+		End of file & SEEK\_END & 2
+	\end{tabular}\\
+
+	Por lo tanto para buscar \textit{numbytes} desde el inicio del archivo, \textit{origin} debería ser \textbf{SEEK\_SET}, para buscar desde la posicion actual debería ser \textbf{SEEK\_CUR}, para buscar desde el final debería ser \textbf{SEEK\_END}.\\
 	
+	El siguiente fragmento lee el byte 235 en un archivo que es llamado \textbf{test}.\\
+	
+	...
+	
+	FILE *fp;
+	
+	char ch;\\
+	
+	if((fp = fopen(''test", ''rb")) == NULL) $\lbrace$
+	
+	printf(Cannot open file$\backslash$n);
+	
+	exit(1);
+	
+	$\rbrace$\\
+	
+	fseek(fp, 234, 0);
+	
+	ch = getch(fp);
+	
+	...\\
+	
+	Un valor 0 de retorno  significa que \textbf{fseek()} tuvo éxito. Un valor diferente de 0 indica fallo.\\
+	
+	Un mas interesante ejemplo es el programa \textbf{DUMP}, que usa \textbf{fseek()} para dejarte examinar los contenidos en ASCII y hexadecimal de cualquier archivo elijas. Puedes mirar el archivo en sectores de 128bytes en cualquier dirección. La salida es similar en estilo a el formato usado por DEBUG cuando dado el comando ''D" (dump memory)
+	
+
+
 	\section{Operador SizeOf}
 	
 	\textbf{C} proporciona el operador unitario \textbf{sizeof} para determinar el tamaño en bytes de un arreglo o cualquier otro tipo de dato durante la compilación del programa.
