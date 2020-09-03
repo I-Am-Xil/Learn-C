@@ -1,3 +1,5 @@
+//TODO: El output de este programa es el texto escrito en cadenas de SIZE [bits] en hexadecimal y despues en ASCII
+
 #include<stdlib.h>
 #include<stdio.h>
 #include<ctype.h>

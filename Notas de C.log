@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.15)  29 AUG 2020 07:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.15)  2 SEP 2020 07:45
 entering extended mode
 **"./Notas de C.tex"
 ("Notas de C.tex"
@@ -1477,108 +1477,153 @@ Underfull \hbox (badness 10000) in paragraph at lines 1666--1667
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1678--1679
+Underfull \hbox (badness 10000) in paragraph at lines 1668--1669
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1670--1671
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1674--1675
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 1680--1681
+Underfull \hbox (badness 10000) in paragraph at lines 1682--1683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1710--1711
+Underfull \hbox (badness 10000) in paragraph at lines 1686--1687
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1712--1713
+Underfull \hbox (badness 10000) in paragraph at lines 1688--1689
 
  []
 
 
-Overfull \hbox (19.2927pt too wide) in paragraph at lines 1734--1735
+Underfull \hbox (badness 10000) in paragraph at lines 1696--1697
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1700--1701
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1704--1705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1717--1718
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1719--1720
+
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 1749--1750
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1751--1752
+
+ []
+
+
+Overfull \hbox (19.2927pt too wide) in paragraph at lines 1773--1774
 []\OT1/cmr/m/n/10 printf$($``El pe-so de$ $%s es$ $%.2f kg y tiene$ $%d me-ses 
 $\OMS/cmsy/m/n/10 n$\OT1/cmr/m/n/10 n",perro2.nombre,perro2.peso,perro2.edadmes
 es); 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1742--1743
-
- []
-
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 1801--1802
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1803--1804
+Underfull \hbox (badness 10000) in paragraph at lines 1781--1782
 
  []
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1879--1880
+Underfull \hbox (badness 10000) in paragraph at lines 1840--1841
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1888--1889
+Underfull \hbox (badness 10000) in paragraph at lines 1842--1843
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1890--1891
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1892--1893
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1920--1921
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1923--1924
+Underfull \hbox (badness 10000) in paragraph at lines 1918--1919
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1987--1988
+Underfull \hbox (badness 10000) in paragraph at lines 1927--1928
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1999--2000
+Underfull \hbox (badness 10000) in paragraph at lines 1929--1930
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2001--2002
+Underfull \hbox (badness 10000) in paragraph at lines 1931--1932
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1959--1960
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1962--1963
 
  []
 
 [34]
-Underfull \hbox (badness 10000) in paragraph at lines 2071--2072
+Underfull \hbox (badness 10000) in paragraph at lines 2026--2027
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2073--2074
+Underfull \hbox (badness 10000) in paragraph at lines 2038--2039
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2075--2076
+Underfull \hbox (badness 10000) in paragraph at lines 2040--2041
 
  []
 
-[35] [36] ("Notas de C.aux"
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 2110--2111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2112--2113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2114--2115
+
+ []
+
+[36] [37] ("Notas de C.aux"
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 ) ) 
@@ -1601,9 +1646,9 @@ s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmti10.pfb>
-Output written on "Notas de C.pdf" (36 pages, 248960 bytes).
+Output written on "Notas de C.pdf" (37 pages, 253171 bytes).
 PDF statistics:
- 165 PDF objects out of 1000 (max. 8388607)
+ 171 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

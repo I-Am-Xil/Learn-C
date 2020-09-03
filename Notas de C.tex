@@ -1665,9 +1665,48 @@
 	
 	Un valor 0 de retorno  significa que \textbf{fseek()} tuvo éxito. Un valor diferente de 0 indica fallo.\\
 	
-	Un mas interesante ejemplo es el programa \textbf{DUMP}, que usa \textbf{fseek()} para dejarte examinar los contenidos en ASCII y hexadecimal de cualquier archivo elijas. Puedes mirar el archivo en sectores de 128bytes en cualquier dirección. La salida es similar en estilo a el formato usado por DEBUG cuando dado el comando ''D" (dump memory)
+	Un mas interesante ejemplo es el programa \textbf{DUMP}, que usa \textbf{fseek()} para dejarte examinar los contenidos en ASCII y hexadecimal de cualquier archivo elijas. Puedes mirar el archivo en sectores de 128bytes en cualquier dirección. La salida es similar en estilo a el formato usado por DEBUG cuando dado el comando ''D" (dump memory):\\
 	
-
+	...$\backslash$learn c$\backslash$c dump.c\\
+	
+	\subsubsection{Los streams estandar}
+	
+	Cuando un programa empieza su ejecución, 5 streams son abiertos automaticamente. Los primeros 3 son entrada estandar(stdin), salida estandar (stdout) y error estandar (stderr). Normalmente, estos refieren a la consola, pero pueden ser redireccionados por el sistema operativo para hacer otro dispositivo stream. Porque estos son archivos punteros pueden ser usados por el sistema ANSI I/O para realizar operaciones I/O en la consola. Por ejemplo, \textbf{putchar()} puede ser definido como:\\
+	
+	putchar(char c)
+	
+	$\lbrace$
+	
+	putc(c, stdout);
+	
+	$\rbrace$\\
+	
+	Puedes usar \textbf{stdin}, \textbf{stdout} y \textbf{stderr} como archivos punteros en cualquier funcion que usa una variable de tipo \textbf{FILE *}.
+	
+	Las funciones I/O de consola \textbf{getchar()}, \textbf{putchar()}, \textbf{printf()} y \textbf{scanf()} de hecho realizan sus operaciones I/O usando \textbf{stdin} y \textbf{stdout}. Desde que DOS permite redireccionar I/O usando los operadores de linea de comando $>$ y $<$, estas funciones pueden tambien ser leidas y escritas en archivos de disco. Por ejemplo:\\
+	
+	...$\backslash$learn c$\backslash$c iotest.c\\
+	
+	Como puedes ver, nada se despliega en la pantalla. Sin embargo si enlistas los contenidos \textbf{OUT} verás que el mensaje ha sido escrito en el.
+	
+	Debes mantener en mente que \textbf{stdin}, \textbf{stdout} y \textbf{stderr} no son variables sino constantes. Ademas, tambien así como son creados al inicio de tu programa automaticamente, tambien son cerrados automaticamente al terminar el mismo; no debes intentar cerrarlos tu mismo.
+	
+	\subsubsection{fprintf() y fscanf()}
+	
+	En adicion a las funciones basicas I/O discutidas, el sistema ANSI C I/O incluye \textbf{fprintf()} y \textbf{fscanf()}. Estas funciones funcionan exactamente como \textbf{printf()} y \textbf{scanf()}, excepto que estas operan con archivos de disco. Los prototipos de \textbf{fprintf()} y \textbf{fscanf()} son:\\
+	
+	int fprintf(FILE *fp, char *control\_string,...);
+	
+	int fscanf(FILE *fp, char *control\_string,...);\\
+	
+	Donde \textit{*fp} es un archivo punter retornado por una llamada de \textbf{fopen()}. Excepto por dirigir su salida a el archivo definido por \textit{*fp}, estas operan exactamente como \textbf{fprintf()} y \textbf{fscanf()}, respectivamente.
+	
+	Para ilustrar lo utiles que estas funciones pueden ser, el siguiente programa mantiene un simple directorio telefonico en un archivo de disco. Podrias ingresar numeros o puedes buscar un numero dado un nombre:\\
+	
+	
+	
+	
+	
 
 	\section{Operador SizeOf}
 	
