@@ -1,3 +1,5 @@
+//TODO: este programa tiene un bug al añadir y despues leer un directorio
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<conio.h>
@@ -53,6 +55,7 @@ void add_num(){
         exit(1);
     }
 
+    printf("Example Logan 81 1171 5804\n");
     printf("Enter name and number: ");
     fscanf(stdin, "%s%d%d%d", name, &a_code, &exchg, &num);
 

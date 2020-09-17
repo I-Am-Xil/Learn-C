@@ -1703,11 +1703,131 @@
 	
 	Para ilustrar lo utiles que estas funciones pueden ser, el siguiente programa mantiene un simple directorio telefonico en un archivo de disco. Podrias ingresar numeros o puedes buscar un numero dado un nombre:\\
 	
+	...$\backslash$learn c$\backslash$c fprintf\_fscanf.c\\
 	
+	Aunque \textbf{fprintf()} y \textbf{fscanf()} seguido son la forma mas sencilla de escribir y leer datos a archivos de disco, estos no son siempre los mas eficientes. Por que el sistema formateado ASCII está siendo escrito directamente como aparecería en pantalla, en lugar de en binario. Entonces si la velocidad o el tamaño del archivo es una preocupacion, deberias probablemante usar \textbf{fread()} y \textbf{fwrite()}.
 	
+	\subsubsection{Borrando archivos}
 	
+	la función \textbf{remove()} borra el archivo especificado. su prototipo es\\
 	
+	int remove(char *\textit{filename});\\
+	
+	retorna cero si es un exito, no-cero si falla
+	
+	\subsection{Las Rutinas de archivo tipo UNIX}
+	
+	Ya que C fue diseñado inicialmente bajo el sistema operativo UNIX, un segundo archivo de disco de sistema I/O fue creado. ysa funciones que son separadas de las funciones del sistema de archivos ANSI
+	
+	\section{Tipos de dato avanzados}
+	
+	\subsection{Modificadores de acceso}
+	
+	C tiene 2 tipos de modificadores de acceso que son usadas para controlar las formas en que las variables pueden ser accesadas o modificadas. Estos modificadores son llamados \textbf{const} \textbf{volatile}. Tambien son comunmente referidas como \textit{cualificadores de tipo}
+	
+	\subsubsection{const}
+	
+	Variables declarados con el modificador \textbf{const} no podrian ser cambiadas durande la ejecucion de tu programa. Podrias darles un valor inicial, por ejemplo:\\
+	
+	const float version = 3.20;\\
+	
+	Crea una variable \textbf{float} llamada \textbf{version} que no podria ser modificada por tu programa. Puede sin embargo ser usada en otro tipo de expresiones.
+	
+	Las variables de tipo \textbf{const} tienen un uso  muy importante, estas pueden proteger los argumentos a una funcion de ser modificado por esa funcion. Esto es, cuando un puntero es pasado a una funcion, esto es posible para esa funcion modificar la variable apuntada por el puntero. Sin embargo si el puntero es especificado como \textbf{const} en la declaracon de parametros su valor no podra ser modificado, por ejemplo:\\
+	
+	...$\backslash$learn c$\backslash$c const.c\\
+	
+	Si por alguna razon intentas modificar el argumento, no compilara correctamente e imprimira el siguiente error\\
+	
+	Cannot modify a const object in the function \textit{name}\\
+	
+	El segundo uso para \textbf{const} es para verificar que de hecho tu programa no modifica una variable. Recuerda que una variable puede ser modificada por algo fuera de tu programa, sin embargo de esta forma aseguras que ningun cambio en la variable es por tu programa, sino por eventos externos.
+	
+	\subsubsection{volatile}
+	
+	El modificador \textbf{volatile} es usado para decirle al compilador que el valor de una variable puede cambiar en formas que no estan especificadas por el programa. Por ejemplo, la direccion de una variable global puede ser pasada a la rutina de el sistema operativo y usada para mantener el tiempo real del sistema. En esta situacion los contenidos de la variable seran alterados sin algun asignamiento explicito en el programa. Ahora considera el siguiente fragmento de codigo:\\
+	
+	int clock, timer;\\
+	.\\
+	.\\
+	.\\
+	timer = clock;\\
+	/*do Something*/\\
+	printf(''Elapsed time is \%d$\backslash$n", clock-timer);\\
+	
+	Porque \textbf{clock} no es alterada por el programa y no esta declarada como \textbf{volatile} Puede ser optimizado de tal forma en que el valor de \textbf{clock} no es reexaminado por \textbf{printf()}. Sin embargo si declaras \textbf{clock} como:\\
+	
+	volatile int clock;\\
+	
+	Entonces no ocurrira esa optimizacion y el valor de \textbf{clock} sera reexaminado cada vez que sea referenciado
+	
+	Aunque pueda parecer extraño, es posible utilizar \textbf{const} y \textbf{volatile} juntas. Por ejemplo, si 0x30 es asumido ser el valor de un puerto que es cambiado solo por condiciones externas, entonces la siguiente declaracion es precisamente lo que quieres para prevenir cualquier posible efecto secundario accidental:\\
+	
+	const volatiole unsigned har *port=0x30;\\
+	
+	\subsection{Especificadores de guardado de clase }
+	
+	Hay 4 especificadores de guardado de clase soportados por C:
+	
+	\begin{itemize}
+		\item auto
+		\item extern
+		\item static
+		\item register
+	\end{itemize}
 
+	Estos son usados para decirle al compilador como la variable que sigue deberia ser guardada. El especificador de guardado precede al resto de las declaraciones de variable. Su forma general es:\\
+	
+	\textit{storage-class-soecufuer type-specifier variable-list;}\\
+	
+	\subsubsection{auto}
+	
+	El especificador \textbf{auto} es usado para declarar variables locales. Sin embargo este es raramente usado porque las variables locales son \textbf{auto} por default. Es extremadamente raro ver esta palabra clave en un programa
+	
+	\subsubsection{extern}
+	
+	Todos los programas con los que has estado trabajando hasta el momento han sido pequeños. sin embargo en verdadera tareas de programación, los programas tienen a ser mucho mas largos. hasta el punto en que sin importar lo veloz que sea tu compilador, el tiempo de compilación crece tanto que se vuelve molesto. Cuando esto sucede deber romper tu programa en 2 o mas archivos separados. De esta manera pequeños cambios en un archivo no requiere que todo el programa sea recompilado, lo que significa salvar mucho tiempo en largos proyectos.
+	
+	C contiene la palabra clave \textit{extern}, que ayuda a soportar el acercamiento de múltiples archivos.
+	
+	Ya que C permite separadamente compilar módulos de un programa largo para ser unido junto para acelerar la compilación y la ayuda en el manejo de largos proyectos, debería haber alguna manera de decirle a todos los archivos sobre las variables requeridas para el programa. Tu programa puede solo tener una copa de cada variable global. Si tratas de declarar dos variables globales con el mismo nombre en el mismo archivo, el compilador simplemente elije una y la usa (En C++ sin embargo es un error el declarar 2 variables con el mismo nombre). Si tu tratas de declaras las variables globles necesitadas por tu programa en cada archivo de un programa multi-archivo, estarás en problemas. Aunque el compilador no manda un mensaje de error en tiempo de compilación, estas tratando de crear 2 o mas copias de cada variable. Esto será encontrado por el enlazador cuando intente unir tus módulos juntos. El enlazador mandará un mensaje de error porque no sabrá que variable usar. La solución es declarar todas tus globales en un archivo y usar \textbf{extern} en los demás archivos.
+	
+	\subsubsection{Variables static}
+	
+	Variables de tipo \textbf{static} son variables permanentes en ya sea su propia funcion o el archivo, estas difieren de las varibles globlesporque no son conocidas fuera de su funcion o archivo, pero si mantienen sus valores entre llamadas. esta caracteristica puede hacerlas bastante utiles cuando estribes funciones generanlizadas y librerias de funciones, que pueden ser utilizadas por otros programadores.
+	
+	\subsubsection{Variables locales static}
+	
+	Cuando el modificador \textbf{static} es usado a una variable local, hace que el compilador cree un almacenamiento permanente en basicamente la misma forma en que hace con las variables globales. La principal diferencia entre una variable \textbf{static} y una variable global es que la variable \textbf{static} se mantiene solo en el bloque en que es declarada. En otras palabras, una variable local  \textbf{static} es una variable local que mantiene su valor entre llamadas. Por ejemplo:\\
+	
+	...$\backslash$learn c$\backslash$c static.c\\
+	
+	\subsubsection{Variables globales static}
+	
+	cuando el especificador \textbf{static} es aplicado a una variable global, le instruye al compilador crear una variable que es conocida solo por el archivo en el que se declara. Esto significa que aunque la variable sea local, otras rutinas en otros archivos, no podrian tener conocimiento de el o alterar su valor directamente.
+	
+	Las variables \textbf{static} te permiten esconder porciones de tu codigo de otras porciones. Esta puede ser una tremenda ventaja cuando estas escribiendo para manejar un muy largo y complejo programa. El especificador de almacenamiento \textbf{static} te permite crear funciones muy generales que puedes guardar en librerias para su posterior uso.
+	
+	\subsubsection{Variables register}
+	
+	Otro importante tipo de modificador encontrado en C es llamado \textbf{register} y es tradicionalmente aplicado a variables de tipo \textbf{int} y \textbf{char}. El modificador \textbf{register} le pide al compilador acceder a esa variable lo más rápido posible, esto para los tipos de dato \textbf{int} y \textbf{char} significa que son guardadas en el cache del cpu\\
+	
+	El especificador register solo es aplicable para variables locales y sus parametros, variables globales \textbf{register} no son validas es importante saber que \textbf{register} no es un comando, es una peticion, pues exsiste un limitado numero de locaciones de acceso rapido. cuando estos espacios se terminen, las demas variables declaradas con \textbf{register} se trataran como cualquier otra variable. Ejemplo:\\
+	
+	...$\backslash$learn c$\backslash$c register.c\\
+	
+	\subsection{Punteros de funciones}
+	
+	Una particularmente confusa y aun así poderosa cualidad de C es el \textbf{archivo puntero}. Una funcion puntero es, de cierta forma, un nuevo tipo de dato. Aun cuando una funcion, no es una variable, aun tiene una locacion fisica en memoria que puede ser asignada a un puntero. La direccion asignada al puntero es el punto de entrada de la funcion. Este puntero puede despues ser usado en lugar del nombre de la funcion. Tambien permite a la funcion ser pasada como argumento de la funcion.
+	
+	Veamos como se llaman y se compilan las funciones en C. Primero cada funcion es compilada, codigo fuente es transformado a un objeto y un punto de entrada es establecido. Cuando una llamada se hace a la funcion mientras tu program corre, una ''llamada" en lenguaje maquina es hecha a este punto de entrada. Por lo tanto un puntero a una funcion de hecho contiene la direccion de memoria a el punto de entrada de la funcion.
+	
+	La direccion de una funcion es obtenida usando el nombre de la funcion sin algun parentesis o argumentos. Por ejemplo:\\
+	
+	...$\backslash$learn c$\backslash$c function\_pointer.c\\
+	
+	
+	
 	\section{Operador SizeOf}
 	
 	\textbf{C} proporciona el operador unitario \textbf{sizeof} para determinar el tamaño en bytes de un arreglo o cualquier otro tipo de dato durante la compilación del programa.

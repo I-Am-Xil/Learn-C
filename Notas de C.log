@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.15)  2 SEP 2020 07:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.13)  15 SEP 2020 11:25
 entering extended mode
 **"./Notas de C.tex"
 ("Notas de C.tex"
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-08-07>
-("C:\Program Files\MiKTeX\tex/latex/base\article.cls"
+L3 programming layer <2020-09-03>
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-("C:\Program Files\MiKTeX\tex/latex/base\size10.clo"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
 File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count168
@@ -21,21 +21,21 @@ File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
 )
-("C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 )
-("C:\Program Files\MiKTeX\tex/generic/babel\babel.sty"
-Package: babel 2020/07/13 3.47 The Babel package
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2020/09/01 3.48 The Babel package
 
-("C:\Program Files\MiKTeX\tex/generic/babel\babel.def"
-File: babel.def 2020/07/13 3.47 Babel common definitions
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
+File: babel.def 2020/09/01 3.48 Babel common definitions
 \babel@savecnt=\count176
 \U@D=\dimen135
 \l@babelnohyphens=\language79
 
-("C:\Program Files\MiKTeX\tex/generic/babel\txtbabel.def")
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 )
 \bbl@dirlevel=\count177
@@ -43,11 +43,12 @@ File: babel.def 2020/07/13 3.47 Babel common definitions
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files\MiKTeX\tex/latex/arabi\bblopts.cfg"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(C:\Users\logan\AppData\Roaming\MiKTeX\tex/latex/babel-spanish\spanish.ldf
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.l
+df
 Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
 \es@quottoks=\toks17
 \es@quotdepth=\count178
@@ -56,24 +57,24 @@ Package babel Info: Making . an active character on input line 662.
 Package babel Info: Making < an active character on input line 707.
 Package babel Info: Making > an active character on input line 707.
 ))
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amsmath.sty"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amstext.sty"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks18
 \ex@=\dimen136
 ))
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen137
 )
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count179
@@ -114,17 +115,17 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
-(C:\Users\logan\AppData\Roaming\MiKTeX\tex/latex/geometry\geometry.sty
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-("C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks23
 )
-("C:\Program Files\MiKTeX\tex/generic/iftex\ifvtex.sty"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-("C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
 \Gm@cnth=\count191
@@ -140,8 +141,8 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layoutvoffset=\dimen152
 \Gm@dimlist=\toks24
 
-(C:\Users\logan\AppData\Roaming\MiKTeX\tex/latex/geometry\geometry.cfg))
-("C:\Program Files\MiKTeX\tex/latex/tools\multicol.sty"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
 Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \c@tracingmulticols=\count194
 \mult@box=\box47
@@ -211,10 +212,10 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \colbreak@box=\box92
 \mc@col@check@num=\count269
 )
-("C:\Program Files\MiKTeX\tex/latex/amsfonts\amssymb.sty"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Program Files\MiKTeX\tex/latex/amsfonts\amsfonts.sty"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
@@ -222,12 +223,12 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdfmode.def"
-File: l3backend-pdfmode.def 2020-08-07 L3 backend support: PDF mode
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2020-09-01 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count270
 \l__pdf_internal_box=\box93
-)
-("Notas de C.aux"
+) ("Notas de C.aux"
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 )
@@ -286,15 +287,16 @@ LaTeX Info: Redefining \% on input line 15.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
 
-("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
 
 
-("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd"
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+[1
 
 {C:/Users/logan/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2]
 Underfull \hbox (badness 10000) in paragraph at lines 185--186
@@ -1522,30 +1524,83 @@ Underfull \hbox (badness 10000) in paragraph at lines 1704--1705
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1717--1718
+Underfull \hbox (badness 10000) in paragraph at lines 1706--1707
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1719--1720
+Underfull \hbox (badness 10000) in paragraph at lines 1712--1713
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1714--1715
 
  []
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 1749--1750
+Underfull \hbox (badness 10000) in paragraph at lines 1730--1731
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1751--1752
+Underfull \hbox (badness 10000) in paragraph at lines 1732--1733
 
  []
 
 
-Overfull \hbox (19.2927pt too wide) in paragraph at lines 1773--1774
-[]\OT1/cmr/m/n/10 printf$($``El pe-so de$ $%s es$ $%.2f kg y tiene$ $%d me-ses 
-$\OMS/cmsy/m/n/10 n$\OT1/cmr/m/n/10 n",perro2.nombre,perro2.peso,perro2.edadmes
-es); 
+Underfull \hbox (badness 10000) in paragraph at lines 1736--1737
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1738--1739
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1740--1741
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1742--1743
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1748--1749
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1750--1757
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1758--1759
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1760--1761
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 1764--1765
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1766--1767
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1779--1780
+
  []
 
 
@@ -1553,38 +1608,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 1781--1782
 
  []
 
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 1840--1841
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1842--1843
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1918--1919
-
- []
-
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1927--1928
+Underfull \hbox (badness 10000) in paragraph at lines 1801--1802
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1929--1930
+Underfull \hbox (badness 10000) in paragraph at lines 1803--1804
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1931--1932
+Underfull \hbox (badness 10000) in paragraph at lines 1813--1814
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1959--1960
+Underfull \hbox (badness 10000) in paragraph at lines 1815--1816
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1817--1818
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1825--1826
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 1827--1828
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1837--1838
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1839--1840
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1869--1870
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1871--1872
+
+ []
+
+
+Overfull \hbox (19.2927pt too wide) in paragraph at lines 1893--1894
+[]\OT1/cmr/m/n/10 printf$($``El pe-so de$ $%s es$ $%.2f kg y tiene$ $%d me-ses 
+$\OMS/cmsy/m/n/10 n$\OT1/cmr/m/n/10 n",perro2.nombre,perro2.peso,perro2.edadmes
+es); 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1901--1902
+
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 1960--1961
 
  []
 
@@ -1593,62 +1685,95 @@ Underfull \hbox (badness 10000) in paragraph at lines 1962--1963
 
  []
 
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 2026--2027
-
- []
-
-
+[36]
 Underfull \hbox (badness 10000) in paragraph at lines 2038--2039
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2040--2041
-
- []
-
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 2110--2111
+Underfull \hbox (badness 10000) in paragraph at lines 2047--2048
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2112--2113
+Underfull \hbox (badness 10000) in paragraph at lines 2049--2050
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2114--2115
+Underfull \hbox (badness 10000) in paragraph at lines 2051--2052
 
  []
 
-[36] [37] ("Notas de C.aux"
+
+Underfull \hbox (badness 10000) in paragraph at lines 2079--2080
+
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 2082--2083
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2146--2147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2158--2159
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2160--2161
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 2230--2231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2232--2233
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2234--2235
+
+ []
+
+[39] [40] ("Notas de C.aux"
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 ) ) 
 Here is how much of TeX's memory you used:
- 3363 strings out of 481212
- 44892 string characters out of 2915727
- 316938 words of memory out of 3000000
- 18941 multiletter control sequences out of 15000+200000
+ 3382 strings out of 481199
+ 46365 string characters out of 2905595
+ 319269 words of memory out of 3000000
+ 18973 multiletter control sequences out of 15000+200000
  544981 words of font info for 66 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,7n,35p,994b,361s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Progr
-am Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
-/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program File
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmti10.pfb>
-Output written on "Notas de C.pdf" (37 pages, 253171 bytes).
+ 36i,7n,35p,1126b,361s stack positions out of 5000i,500n,10000p,200000b,50000s
+<E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmbx10.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmbx9.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmbxti10.pfb><E:/Users/logan/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><E:/Users/logan/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/Users/logan/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><E:/Users/loga
+n/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><E:/Us
+ers/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb
+><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mr9.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb>
+Output written on "Notas de C.pdf" (40 pages, 264775 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
+ 180 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
