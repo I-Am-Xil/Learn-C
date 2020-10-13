@@ -1826,7 +1826,41 @@
 	
 	...$\backslash$learn c$\backslash$c function\_pointer.c\\
 	
+	...$\backslash$learn c$\backslash$c function\_pointer2.c\\
 	
+	\subsection{Asignación dinámica de memoria}
+	
+	Antes de abandonar el tema de tipos de dato avanzados, es necesario discutir sobre la asignación dinámica de memoria de C, que nos permite la creación de variables durante la ejecución del programa.
+	
+	Existen 2 maneras principales en que un programa de C puede guardar información en la memoria principal de la computadora. La primera usa variables globales y locales que estan definidas por el lenguaje C, en ambos casos se requiere que el programador sepa preferentemente la cantidad de espacio de almacenamiento necesario para cualquier situación. La segunda manera es atravez de el uso del sistema de asigamiento dinamico de memoria de C.\\
+	
+	\subsection{Asignación y liberación de memoria}
+	
+	El centro del sistema de asignación dinámica de memoria de C son las funciones \textbf{malloc()} y \textbf{free()}. Estas trabajan juntas usando la region de memoria libre para establecer y mantener una lista de almacenaje disponible. La funcion \textbf{malloc()} asigna la memoria y \textbf{free()} la libera. La funcion \textbf{malloc()} tiene su prototipo:\\
+	
+	void *malloc(unsigned \textit{number\_of\_bytes});\\
+	
+	Retorna un puntero de tipo void, lo que significa que puedes asignarlo a cualquier tipo de puntero. Puedes usar \textbf{sizeof()} para determinar exacto numero de bytes necesarios para cada tipo de dato. De esta manera puedes hacer tus programas portables a una variedad de sistemas.
+	
+	La función \textbf{free()} es el opuesto de \textbf{malloc()}. una vez la memoria ha sifo liberada puede ser usada por una subsecuente llamada a \textbf{malloc()}. La función \textbf{free()} tiene el siguiente prototipo:\\
+	
+	void free(void *p);
+	
+	ejemplo:\\
+	
+	...$\backslash$learn c$\backslash$c free.c\\
+	
+	La locacion dinamica de memoria es muy buena cuando no sabes por adelantado, con cuantos objetos de dato estas tratando. Aunque ejemplos importantes de la locacion dinamica suelen ser largos y complejos, el siguiente ejemplo te dará el sabor de su uso:\\
+	
+	...$\backslash$learn c$\backslash$c free2.c\\
+	
+	\section{Tipos definidos por el usuario}
+	
+		C te permite crear 5 diferentes tipos de datos customizados. El primero es el \textit{structure}, que es un agrupador de variables bajo un mismo nombre. El segundo tipo es el \textit{bit-field}, que es un tipo de estructura que permite acceso sencillo a los bits en una palabra. El tercero es el \textit{union}, que permite a la misma pieza de memoria ser definida como 2 o mas tipos de variables. El cuarto tipo es el \textit{enumeration}, que es una lista de simbolos. El quinto tipo de archivo es creado a travez del uso de \textbf{typedef} y crea un nuevo nombre para un tipo existente.
+		
+		\subsection{Structures}
+		
+			
 	
 	\section{Operador SizeOf}
 	
@@ -2033,7 +2067,7 @@
 	
 	$\rbrace$
 	
-	\section{Asignación dinámica de memoria}
+	\section{Asignación dinámica de memoria II}
 	
 	La memoria es un espacio que reserva nuestra computadora para almacenar algun valor o dato.\\
 	
