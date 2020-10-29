@@ -6,12 +6,14 @@ int main()
 {
     int n_primos = 0;
     int i = 1;
+    int id;
 
     while (n_primos <= 10001)
     {
-        if (identificador(i) != 0)
+        id = identificador(i); 
+        if (id != 0)
         {
-            printf("%i\n", identificador(i));
+            printf("%i\n", id);
             n_primos++;
         }
         i++;

@@ -1860,6 +1860,112 @@
 		
 		\subsection{Structures}
 		
+			Una estructura es una colección de variables que se referencian bajo un nombre, brindando una forma conveniente de mantener la información relacionada junta. Una \textit{Estructura de declaración}, forma una plantilla que puede ser usada para crear estructuras de variables. Las variables que comprenden la estructura son llamados elementos de estructura o miembros de estructura. La palabra clave \textbf{struct} le dice al compilador que una estructura plantilla ha sido creada, ej:\\
+			
+			struct addr\{
+			
+			char name[30];
+			
+			char street[40];
+			
+			char city[20];
+
+			char state[30];
+			
+			unsigned long int zip;
+			
+			\};\\
+			
+			La declaracion es terminada por un punto y coma. Esto es porque la declaración de una estructura es un estatuto, donde \textit{addr} es el especificador de tipo e identifica esa particular estructura de datos.
+			
+			Hasta este punto no se han declarado variables. Solo se ha definido la forma de la estructura de datos, para declarar variables se haría por ejemplo:\\
+			
+			struct addr\{
+			
+			char name[30];
+			
+			char street[40];
+			
+			char city[20];
+			
+			char state[30];
+			
+			unsigned long int zip;
+			
+			\}addr\_info, binfo, cinfo;\\
+			
+			Si solo necesitas una variable estructura, entonces el identificador de tipo no es necesario, quedando en este caso:\\
+			
+			struct\{
+			
+			char name[30];
+			
+			char street[40];
+			
+			char city[20];
+			
+			char state[30];
+			
+			unsigned long int zip;
+			
+			\}addr\_info;\\
+			
+			\subsubsection{Referenciando miembros de una estructura}
+			
+				Los miembros individuales de una estructura son referenciadas a travez de el uso de el operador de seleccion de miembro: el punto (tambien llamado \textit{Operador punto}). Por ejemplo:\\
+			
+				addr\_info.zip = 12345;\\
+			
+				Todos los elementos de estructuras se accesan de la misma manera, Teniendo la forma general de:\\
+			
+				\textit{structure\_varname.element\_name}\\
+			
+			\subsection{Arreglos de estructuras}
+			
+			El uso mas comun de estructuras es en arreglos de estructuras. Para declarar un arreglo de estructuras, primero debes definir una estructura y despues declarar una variable arreglo de ese tipo
+			
+			...$\backslash$learn c$\backslash$c mailing\_list.c\\
+			
+			\subsection{Assignando estructuras}
+			
+			Si 2 estructuras son de un mismo tipo, puedes entonces asignar la una a la otra. En este caso, todos los elementos de la estructura en el lado izquierdo de el asignamiento, recibirá los valores de sus correspondientes elementos de la estructura ej la derecha. por ejemplo:\\
+			
+			...$\backslash$learn c$\backslash$c assigning\_structures.c\\
+			
+			Recuerda, no puedes asignar una estructura a otra si son de diferente tipo, incluso si comparten algunos elementos
+			
+			
+			\subsection{Pasar elementos de estructuras a funciones}
+			
+			Hasta ahora, todas las estructuras y arreglos de estructuras se ha asumido que son globales o definidas en la funcion que las usa. En esta seccion se tomará en consideracion especial aa pasar estructuras y sus elemetos a funciones.
+			
+				\subsubsection{Pasando elementos de estructura a funciones}
+				
+				Pasar un elemento de una estructura, es solamente pasar una variable, a no ser que sea un elemento complejo, como un arreglo de caracteres; sin embargo, si deseas pasar la direccion de un elemento de la estructura, tienes ue poner el operador \& antes del nombre de la variable de estructura, no del elemento
+				
+				\subsubsection{Pasar estructuras enteras a funciones}
+				
+				Cuando una estructura es pasada como argumento de una funcion, toda la estructura es pasada usando la llamada estandar por valor. Esto por su puesto significa que cualquier cambio hecho a los conenidos de la estructura dentro de la funcion a la cual es pasada no afecta la estructura usada como un argumento por ejemplo:\\
+				
+				...$\backslash$learn c$\backslash$c struct\_param.c\\
+				
+			\subsection{Punteros a estructuras}
+			
+			C permite punteros a estructuras de la misma forma que permite punteros a cualquier otro tipo de variable. Sin embargo, existen cientos aspectos especiales de los que debes estar al tanto.
+			
+				\subsubsection{Declarando un puntero de estructura}
+				
+				Los punteros de estructura, son declarados colocando \textbf{*} frente al nombre de la variable de estructura por ejemplo:\\
+				
+				struct addr *addr\_pointer;\\
+				
+				\subsubsection{Usando punteros de estructura}
+				
+				Existen varios usos para los punteros de estructura, uno es el de archivar una llamada por referencia a una funcion. Otro es crear una lista linkeada y otras estructuras dinamicas de datos (\textit{Turbo C/C++: The Complete Reference})
+				
+				Existe un gran contratiempo al pasar estructuras enteras a funciones y es el esfuerzo para mover toda la estructura de elementos. 
+			
+				
 			
 	
 	\section{Operador SizeOf}
