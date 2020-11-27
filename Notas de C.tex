@@ -1963,47 +1963,381 @@
 				
 				Existen varios usos para los punteros de estructura, uno es el de archivar una llamada por referencia a una funcion. Otro es crear una lista linkeada y otras estructuras dinamicas de datos (\textit{Turbo C/C++: The Complete Reference})
 				
-				Existe un gran contratiempo al pasar estructuras enteras a funciones y es el esfuerzo para mover toda la estructura de elementos. 
-			
+				Existe un gran contratiempo al pasar estructuras enteras a funciones y es el esfuerzo para mover toda la estructura de elementos. En simples estructuras, con algunos elementos, este esfuerzo no es demasiado importante, pero si es una estructura de varios elementos o si estos son arreglos, entonces este esfuerzo puede degradar el tiempo de ejecución a niveles inaceptables. La solución a este problema está en los punteros a estructuras. Ejemplo:\\
 				
+				struct\{
+				
+				float balance;
+				
+				char name;
+				
+				\}person;\\
+				
+				struct bal *p = \&person;\\
+				
+				Para accesar a \textbf{balance} podrías escribir:\\
+				
+				(*p).balance\\
+				
+				Es extraño ver, si alguna vez lo haces, el encontrar que se utilice explicitamente el operador * para accesar a una estructura atravez de un puntero, es algo tan comun que de hecho existe un operador especial para esta tarea, es el \textit{->}, al cual la mayoria de los programadores de C llaman el operador \textit{flecha}. Por ejemplo, para escribir lo anterior se haría:\\
+				
+				p-\textgreater balance\\
+				
+				Ejemplo:\\
+				
+					...$\backslash$learn c$\backslash$c struct\_pointer.c\\
+					
+				Recuerda, debes usar el operador punto cuando trabajes con la estructura en si, cuando tengas un puntero a la estructura, utiliza el operador flecha, tambien recuerda que debes pasar la direccion de la estructura con el \textbf{\&}.\\
+				
+				Vamos a explorar algunas de las funciones de tiempo y fecha de C. Las funcionese que tratan con el sistema de tiempo y fecha, requieren el archivo de cabecera TIME.H para sus prototipos. Tambien se incluye en este archivo de cabecera 2 tipos definidos. El \textbf{time\_t} es capaz de representar el sistema tiempo y fecha como un entero largo. este es referido como el \textit{tiempo calendario}. La estructura de tipo \textbf{tm} mantiene la fecha y el tiempo partido en sus elementos. La estructura \textbf{tm} es definida de esta manera:\\
+				
+				struct tm\{
+				
+				int tm\_sec; // seconds, 0-59
+				
+				int tm\_min; // munutes, 0-59
+				
+				int tm\_hour; // hours, 0-23
+				
+				int tm\_mday; // day of the month 1-31
+				
+				int tm\_mon; // months since Jan, 0-11
+				
+				int tm\_year; // years form 1900
+				
+				int tm\_wday; // days since Sunday 0-6
+				
+				int tm\_yday; // days since Jan 1, 0-365
+				
+				int tm\_isdst; // daylight savings time indicator
+				
+				\}
+					
+					
+				El valor de \textbf{tm\_isdst}  será positivo si el tiempo de verano esta en efecto, 0 si está inactivo o un valor negativo si no se tiene informacion sobre ello. Esta forma de fecha y tiempo es llamada \textit{broken-down time}.
+				
+				la fundacion por el tiempo y la fecha de C es \textbf{time()} que tiene el prototipo:\\
+				
+				time\_t time(time\_t *time);\\
+				
+				La funcion \textbf{tiempo()} retorna el numero de segundos que han pasado desde enero 1 1970. Puede ser llamado con un puntero nulo o con un puntero a una variable de tiempo \textbf{time\_t}
+				
+				Para convertir de tiempo de calendario a \textit{broken-down time}, usa \textbf{localtime()}, que tiene este prototipo:\\
+				
+				struct tm *localtime(time\_t *time);\\
+				
+				La estructura usada por \textbf{localtime()} es estaticamente alocada y es sobreescrita cada vez que la funcion es llamada. Si deseas guardar los contenidos de la estructura, es necesario copiarlo en otro lado.
+				
+				Aunque tu programa puede utilizar la forma \textit{broken-down} de el tiempo y fecha, la forma mas sencilla de generar una cadena de tiempo y fecha es por el uso de \textbf{asctime()} cuyo protortipo es:\\
+				
+				char *asctime(struct tm *ptr);\\
+				
+				La funcion \textbf{asctime()} retorna un puntero a una cadena de la forma:\\
+				
+				day month date hours:minutes:seconds year$\backslash$n$\backslash$0\\
+				
+				El puntero de estructura pasada a \textbf{asctime()} es la obtenida por \textbf{localtime()}
+				
+				Como \textbf{localtime()} es estaticamente alocada y es sobreescrita cada vez que la funcion es llamada. Si deseas guardar los contenidos de la estructura, es necesario copiarlo en otro lado. Ejemplo:\\
+				
+				...$\backslash$learn c$\backslash$c time.c\\
+				
+			\subsection{Arreglos y estructuras en estructuras}
+				
+			Miembros de estructuras pueden ser de cualquier tipo de dato de C, incluyendo arreglos y estructuras. Por ejemplo:\\
+				
+			struct x \{
+				
+			int a [10][10];
+				
+			float b;
+				
+			\} y;\\
+				
+			para referenciar al entero 3,7 en \textbf{a} de la estructura \textbf{y} escribirias:\\
+				
+			y.a[3][7];\\
+				
+			Cuando una estructura es elemento de otra estructura, se llama estructura \textit{anidada}. Por ejemplo:\\
+				
+			struct emp \{
+				
+			struct addr address;
+				
+			float wage;
 			
+			\} worker;\\
+				
+				
+			Para referenciar a un elemento de \textit{address} en \textbf{emp} escribirias:\\
+				
+			worker.address.\textit{variable};\\
+				
+			\subsection{Bit-fields}
+			
+			A diferencia muchos otros lenguajes, C tiene un metodo intrinseco para accesar a uno o mas bits en un byte o palabra. Esto pude ser util para un numero de razones:
+			
+			\begin{itemize}
+				\item Si el almacenamiento es limitado, puedes guardar varias variables \textit{booleanas} en un byte
+				\item Cierta interfaz de un dispositivo transmite informacion codificada en bits dentro de un byte
+				\item Cierta encriptacion de rutinas necesita accesar los bits en un byte
+			\end{itemize}
+		
+			Un metodo que C usa para accesar bits es basado en la estructura llamada \textit{bit-field}. un \textit{bit-field} es solo un tipo de miembro de estructura que define en bits que tal largo cada elemento es. La forma general de la declaracion de un campo de bits es:\\
+			
+			struct \textit{struct-type-name}\{
+			
+			\textit{type name1 : length;}
+
+			\textit{type name2 : length;}
+			
+			...
+			
+			\textit{type nameN : length;}
+						
+			\}\\
+			
+			Un campo de bits debe ser declarado como \textbf{int}, \textbf{unsigned} or \textbf{signed}. Campos de bits de longitud 1 deben ser declarados como \textbf{unsigned} porque un solo bit no puede tener un signo.\\
+			
+			No tienes que nombrar cada campo de bits. Esto hace sencillo alcanzar el bit que quieres, pasando los no usados, por ejemplo:\\
+			
+			struct equip\{
+			
+			unsigned floppy\_boot: 1;
+			
+			unsigned has8087: 1;
+			
+			unsigned mother\_ram: 2;
+			
+			unsigned video\_mode: 2;
+			
+			unsigned floppies: 2;
+			
+			unsigned dma: 1;
+			
+			unsigned ports: 3;
+			
+			unsigned game\_adapter: 1;
+			
+			unsigned : 1;
+			
+			unsigned num\_printers: 2;
+			
+			\} eq;\\
+			
+			Las variables bit-field tienen ciertas restricciones:
+			
+			\begin{itemize}
+				\item No puedes tomar la direccion de una variable bit-field.
+				\item Las variables bit-field no pueden ser arraigadas.
+				\item No puedes sobrelapar fronteras de enteros.
+				\item Si el campo correrá de izquierda a derecha o de derecha a izquierda variará en diferentes CPU; Esto implica que cualquier codigo que use campos de bits puede tener algounas dependencias a maquina.
+			\end{itemize}
+		
+			Es valido mezclar estructuras normales con miembros de campos de bits. Por ejemplo:\\
+			
+			struct emp\{
+			
+			struct addr address;
+			
+			float pay;
+			
+			unsigned lay\_off: 1;
+			
+			unsigned hourly: 1;
+			
+			unsigned deductions: 3;
+			
+			\};\\
+			
+			Esta estructura define el record de un empleado que usa solo un byte para mantener 3 piezas de informacion: el estado del empleado, si es salariado y el numero de deducciones. Si el uso de campos de bits, esta información habria tomado 3 bytes.
+			
+			\subsection{Uniones}
+			
+			En C, una \textbf{union} es una locacion de memoria que es usada por diferentes variables de diferentes tipos. La declaracion de una \textbf{union} es similar a la de una estructura, por ejemplo:\\
+			
+			union u\_type \{
+			
+			int i;
+			
+			char ch;
+			
+			\};\\
+			
+			Como en las estructuras, esta declaracion no declara alguna variable. Puedes declarar una variable ya sea colocando su nombre al final de la declaracion o usando una declaracion separada. Para declarar una \textbf{union} variable \textbf{cnvt} de tipo \textbf{u\_type} usando la declaracion ya dada, se escribiria:\\
+			
+			union u\_type cnvt;\\
+			
+			En \textbf{cnvt}, ambos enteros \textbf{i} y el caracter \textbf{ch} comparten la misma locacion de memoria. (por lo tanto, \textbf{i} ocupa 2 bytes y \textbf{ch} ocupa solo 1)
+			
+			Cuando una variable \textbf{union} es declarada, el compilador automaticamente creará una variable lo suficientemente larga para mantener el tipo de variable mas largo en la \textbf{union}
+			
+			Para accesar a un elemento de la \textbf{union} usas la misma sintaxis que se usa para estucturas:\\ 
+			
+			\begin{itemize}
+				\item Operador punto
+				\item Operador flecha
+			\end{itemize}
+		
+			Las uniones son usadas frecuentemente cuando conversiones de tipo son necesarios porque te dejan tomar una region de memoria en mas de una manera. por ejemplo:\\
+			
+			void putw(union pw word, FILE *fp)\{
+			
+			putc(word$->$ch[0], fp);
+			
+			putc(word$->$ch[1], fp);
+			
+			\}\\
+			
+			Aunque llamado con un entero, \textbf{putw()} puede aun usar la funcion estandar \textbf{putc()} para escribir un entero a un archivo de disco
+			
+			el siguiente programa combina uniones con campos de bits para desplegar el codigo ASCII, en binario, generado cuando presionas una tecla. La \textbf{union} permite a \textbf{getche()} asignar el valor de la tecla a un caracter variable mientras el campo de bits es usado para desplegar los bits individuales (Este programa es solo para ilustrar como uniones pueden ser usadas para  buscar en la misma pieza de memoria de 2 formas diferentes. Hay muchas maneras mas eficientes de escribir la funcion \textbf{deconde()} que alcanzan el mismo resultado).\\
+			
+			...$\backslash$learn c$\backslash$c union.c
+			
+			\subsection{Enumeraciones}
+			
+			Una enumeracion es un conjunto de nombres de constantes enteras y especifica todos los valores legales que una variable de tipo puede tener. Son definidas mucho como estructuras con la palabra clave \textbf{enum} usada como señal de inicio de un tipo de enumeracion, la forma general es mostrada aquí:\\
+			
+			enum \textit{enum-type-name \{ enumeration list \} variable-list};\\
+			
+			la lista de enumeracion es una lista de nombres separada por comas que representa los valores que una variable de el tipo enumeracion puede tener. Ambos, la lista de tipo enumeracion y la lista de variables es opcional. Como en estructuras, el nombre de enumeracion de tipo es usado para declarar variables de su tipo. Por ejemplo:\\
+			
+			enum coin\{ penny, nickel, dime, quarter, half\_dollar, dollar\};\\
+			
+			enum coin money;\\
+			
+			Dadas estas declaraciones, los siguientes tipo de sentencias son perfectamente validas:\\
+			
+			money = dime;\\
+			
+			if(money == quarter) printf(''is a quarter$\backslash$n");
+			
+			La clave para entender las enumeraciones es que cada uno de lso simbolos, se establece para un valor entero, así pueden ser usadps en cualquier expresion entera. A no ser que sea iniciado de otra forma, el primer simbolo inicia en cero, el valor del segundo es 1 y así continúa.\\
+			
+			Una común pero errónea asunción es que los simbolos pueden ser input o output directamente. Por ejemplo, este codigo no preformará como se desea:\\
+			
+			money = dollar;\\
+			
+			printf(''\%s", money);
+			
+			\subsection{Usando sizeof para asegurar portabilidad}
+			
+			Has visto que  estructuras, uniones y enumeraciones pueden ser usadoas para crear variables de tamaños variables, y que el propio temaño de estas variables puede cambiar de maquina a maquina. El operador unario \textbf{sizeof} es usado para computar el tamaño de cualquier variable o tipo y puede ayudar a eliminar dependencia de maquina en el codigo de tu programa.
+			
+			El operador \textbf{sizeof} toma las dos formas mostradas aquí:\\
+			
+			sizeof \textit{var-name}\\
+
+			sizeof (\textit{type-name})
+			
+			\subsection{typedef}
+			
+			C te permite explicitamente fedinir unevos tipo de datp usando la palabra clave \textbf{typedef}. No estás de hecho creando nuevos tipos de dato, sino definiendo un nuevo nombre para un tipo de dato ya existente. Este proceso puede ayudar a hacer programas dependentes de maquina mas portables; solo hace falta cambiar la sentencia de \textbf{typedef}. Tambien puede ayudar a documentar tu codigo permitiendo nombres descriptivos para los tipos de dato estandar, la forma general de \textbf{typedef} es:\\
+			
+			typedef \textit{type name};
+			
+			Puedes usar typedef para definir tipos complejos de variables, por ejemplo:\\
+			
+			typedef struct client\_type\{
+			
+			float due;
+			
+			int over\_due;
+			
+			char name[40];
+			
+			\} client;\\
+			
+			client clist[NUM\_CLIENTS];\\
+			
+			En este caso, \textbf{client} no es una variable de tipo client\_type, sino otro nombre para \textbf{struct client\_type}.
+			
+			Usando typedef puede ayudar a hacer tu codigo mas facil de leer y mas facil de portar a otra computadora. Pero recuerda que no estas nuevos tipos de dato.
+			
+		\section{Operadores avanzados}
+		
+		A diferencia de otros lenguajes, C contiene muchos tipos de operadores especiales que en gran medida aumenten su poder y flexibilidad -especialmente para programacion a nivel de sistema.
+		
+			\subsection{Operadores bitwise}
+			
+			A diferencia de muchos otros lenguajes, C soporta un completo arsenal de operadores bitwise. Como C fue diseñado para tomar el lugar del lenguaje ensamblador para la mayoria de as tareas de programacion, era importante que tuviera la hablidad de soportar todas (o al menos muchas) operaciones que pueden hacerse en ensamblador. \textit{operadores bitwise} se refieren a testing, setting or shifting del propio bit en un byte o palabra, que corresponde en C a los tipos de dato char, int o long. Los operadores bitwise no deberias ser usados con los tipos de dato float, double, long double, void o otros tipos mas complejos:\\
+			
+			\begin{tabular}{l|l}
+				\textbf{Operator} & \textbf{Action}\\
+				\hline
+				\& & AND\\
+				\textbrokenbar & OR\\
+				$\wedge$ & XOR\\
+				$\sim$ & NOT\\
+				$>>$ & Shift right\\
+				$<<$ & Shift left
+			\end{tabular}\\
+		
+			Las operaciones bitwise son muy seguido encontradoes en drivers, programas modernos, rutinas de archivos de disco, rutinas de impresion y porque similares, pues estas pueden ser usadas para enmascarar ciertos bits, como una paridad. (La paridad de bits es usada para confirmar que el resto de los bits en el byte estan sin cambios. Esto es usualmente los bit de alto orden en cada byte)
+			
+			En terminos de sus mas comunes usos, puedes pensar en el bitwise AND como una forma de apagar bits. Esto es que cualquier bit que es 0 en cualquier operando, causara el correspondiente bit en la variable ser establecido como 0.
+			
+			\clearpage
+			
+			\begin{figure}[!h]
+					\begin{center}
+						\large{\textbf{''A" \& 127}} \\
+						\begin{tabular}{|l l|}
+							\hline
+							\hspace{7pt}parity bit & \\
+							\hspace{7pt}$\downarrow$ & \\
+							\hspace{7pt}11000001 & 
+							\hspace{7pt}\textbf{ch} containing an ''A" with parity set\\
+							\hspace{7pt}01111111 & 127 in binary\\
+							\&\line(1,0){43} & do bitwise AND\\
+							\hspace{8pt}01000001 & ''A" without parity\\
+							\hline
+						\end{tabular}
+					\end{center}
+			\end{figure}
+		
+			En general, bitwise ANDs, ORs y XORs aplican sus operaciones directamente en cada bit en la variable y no son usualmente usadas en sentencias condicionales de la manera en que los operadores relacionales logicos son usados. Por ejemplo, si $x=7 \rightarrow x\&\&8=true$, but $x\&8=false$.\\
+			
+			Los operadores relacionales y logicos, siempre dan como resultado 0 o 1, mientras que sus similares bitwise, pueden producir cualquier valor arbitrario en acordanza con la operacion especifica.\\
+			
+			El operador AND  es tambien util cuando quieres revisar si un bit está encendido o apagado. Por ejemplo:\\
+			
+			if(status \& 8) printf(''bit 4 is on");\\
+			
+			Un interesante uso de este proceso es la funcion \textbf{disp\_binary()} mostrada aqui:\\
+			
+			void disp\_binary()\{
+			
+			for(int t = 128; t$>$0; t=t/2)
+			
+			if(i \& t) printf(''1 ");
+			
+			else printf(''0 ");
+			
+			printf(''$\backslash$n");
+			
+			\}\\
+			
+			La funcion disp\_binary() trabaja testeando cada bit en el byte, usando bitwise AND, para determinar si este está encendido o apagado. Si está encendido, el digito 1 es impreso, de otra forma, se imprime 0. En el capitulo anterior, el campo de bits fue utilizado para imprimir un valor binario (...$\backslash$learn c$\backslash$c union.c). El codigo mostrado aqui, es una mejor alternativa pues es mas rapido y pequeño.
+			
+			los operadores de shift, $>>$ y $<<$, mueven todos los bits en un valor integral, a la izquirerda o derecha como se especifique. La forma general de shift a la derecha es:\\
+			
+			\textit{value} $>>$ \textit{number of bit positions}\\
+			
+			y a la izquierda es:\\
+			
+			\textit{value} $<<$ \textit{number of bit positions}\\
+			
+			las operaciones shift pueden ser muy utiles decodificando entradas externas, como convertidores D$\backslash$A y leyendo informacion de estado. Las operaciones bitwise shift pueden ser tambien usadas para realizar muy rapidas multiplicaciones y divisiones de enteros. Un shift a izquierda multiplicará por 2 y un shift a derecha, dividirá sobre 2. Si el tras la multiplicacion es mayor al rango de su tipo, este tendrá una perdida de informacion.\\
+			
+			El siguiente programa graficamente muestra el efecto de los operadores shift:\\
+			
+			
+			
+					
 	
-	\section{Operador SizeOf}
-	
-	\textbf{C} proporciona el operador unitario \textbf{sizeof} para determinar el tamaño en bytes de un arreglo o cualquier otro tipo de dato durante la compilación del programa.
-	
-	\subsubsection{\textit{size\_t}}
-	
-	Es un tipo definido por el estándar de \textbf{C} como un tipo entero y el valor que debemos de retornar no debe tener signo entonces van a ser puros valores positivos.\\
-	
-	\textbf{Ejemplo:\\}
-	
-	...
-	
-	size\_t getsize$($float *ptr$)$;
-	
-	int main$()$
-	
-	$\lbrace$
-	
-	float array$\lbrack$20$\rbrack$;
-	
-	printf$($``El número de bytes en el arreglo es: \%lu$\backslash$n",sizeof$($array$))$;
-	
-	printf$($``El número de bytes devueltos por getsize es: \%lu$\backslash$n",getsize$($array$))$;
-	
-	return 0;
-	
-	$\lbrace$
-	
-	size\_t getsize$($float *ptr$)$
-	
-	$\lbrace$
-	
-	return sizeof$($ptr$)$;
-	
-	$\rbrace$
-	
+
 	\section{Estructuras}
 	
 	Una estructura es la colección de uno o mas elementos denominados miembros; estos pueden ser de un tipo de dato diferente. para declarar una estructura debemos utilizar la palabra reservada \textbf{struct}. para poder definir una estructura debemos de ponerle un nombre. en este caso las estructuras son muy parecidas a los objetos.\\

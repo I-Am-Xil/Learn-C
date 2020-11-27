@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.13)  29 OCT 2020 17:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.13)  20 NOV 2020 21:55
 entering extended mode
 **"./Notas de C.tex"
 ("Notas de C.tex"
@@ -1783,30 +1783,106 @@ Underfull \hbox (badness 10000) in paragraph at lines 1960--1961
  []
 
 [37]
-Underfull \hbox (badness 10000) in paragraph at lines 1977--1978
+Underfull \hbox (badness 10000) in paragraph at lines 1966--1967
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1979--1980
+Underfull \hbox (badness 10000) in paragraph at lines 1974--1975
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2009--2010
+Underfull \hbox (badness 10000) in paragraph at lines 1976--1977
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2011--2012
+Underfull \hbox (badness 10000) in paragraph at lines 1978--1979
 
  []
 
 
-Overfull \hbox (19.2927pt too wide) in paragraph at lines 2033--2034
-[]\OT1/cmr/m/n/10 printf$($``El pe-so de$ $%s es$ $%.2f kg y tiene$ $%d me-ses 
-$\OMS/cmsy/m/n/10 n$\OT1/cmr/m/n/10 n",perro2.nombre,perro2.peso,perro2.edadmes
-es); 
+Underfull \hbox (badness 10000) in paragraph at lines 1980--1981
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1982--1983
+
+ []
+
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 1
+984.
+(E:\Users\logan\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
+File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 1984.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1984--1985
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1986--1987
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1988--1989
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1990--1991
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1992--1993
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 2019--2020
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2021--2022
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2025--2026
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2027--2028
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2031--2032
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2033--2034
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2035--2036
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2037--2038
+
  []
 
 
@@ -1814,7 +1890,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 2041--2042
 
  []
 
-[38]
+
+Underfull \hbox (badness 10000) in paragraph at lines 2043--2044
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2047--2048
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2055--2056
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2057--2058
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2061--2062
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2069--2070
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2072--2073
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2074--2075
+
+ []
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 2086--2087
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2098--2099
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 2100--2101
 
  []
@@ -1824,95 +1955,338 @@ Underfull \hbox (badness 10000) in paragraph at lines 2102--2103
 
  []
 
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 2178--2179
+
+Underfull \hbox (badness 10000) in paragraph at lines 2126--2127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2187--2188
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2189--2190
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2191--2192
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2219--2220
+Underfull \hbox (badness 10000) in paragraph at lines 2137--2138
 
  []
 
 [40]
-Underfull \hbox (badness 10000) in paragraph at lines 2222--2223
+Underfull \hbox (badness 10000) in paragraph at lines 2151--2152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2286--2287
+Underfull \hbox (badness 10000) in paragraph at lines 2157--2158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2298--2299
+Underfull \hbox (badness 10000) in paragraph at lines 2165--2166
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2300--2301
+Underfull \hbox (badness 10000) in paragraph at lines 2167--2168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2169--2170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2175--2176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2182--2183
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2190--2191
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2194--2195
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 2370--2371
+Underfull \hbox (badness 10000) in paragraph at lines 2200--2201
+
+ []
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2202.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2202--2203
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2372--2373
+Underfull \hbox (badness 10000) in paragraph at lines 2204--2205
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2374--2375
+Underfull \hbox (badness 10000) in paragraph at lines 2206--2207
 
  []
 
-[42] [43] ("Notas de C.aux"
+
+Underfull \hbox (badness 10000) in paragraph at lines 2208--2209
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2210--2211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2212--2213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2216--2217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2218--2219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2220--2221
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2228--2229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2230--2231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2236--2237
+
+ []
+
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 2240--2241
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2250--2251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2252--2253
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2264--2265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2266--2276
+
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 2300--2301
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2302--2303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2304--2305
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2306--2307
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2308--2309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2320--2321
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2324--2325
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2326--2327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2328--2329
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2330--2331
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2332--2333
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2334--2335
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2343--2344
+
+ []
+
+[44
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 2345--2346
+
+ []
+
+
+Overfull \hbox (19.2927pt too wide) in paragraph at lines 2367--2368
+[]\OT1/cmr/m/n/10 printf$($``El pe-so de$ $%s es$ $%.2f kg y tiene$ $%d me-ses 
+$\OMS/cmsy/m/n/10 n$\OT1/cmr/m/n/10 n",perro2.nombre,perro2.peso,perro2.edadmes
+es); 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2375--2376
+
+ []
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 2434--2435
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2436--2437
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2512--2513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2521--2522
+
+ []
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 2523--2524
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2525--2526
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2553--2554
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2556--2557
+
+ []
+
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 2620--2621
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2632--2633
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2634--2635
+
+ []
+
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 2704--2705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2706--2707
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2708--2709
+
+ []
+
+[49] [50] ("Notas de C.aux"
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 ) ) 
 Here is how much of TeX's memory you used:
- 3401 strings out of 481199
- 46717 string characters out of 2905595
+ 3424 strings out of 481199
+ 47127 string characters out of 2905595
  319269 words of memory out of 3000000
- 18989 multiletter control sequences out of 15000+200000
- 544981 words of font info for 66 fonts, out of 3000000 for 9000
+ 19008 multiletter control sequences out of 15000+200000
+ 545316 words of font info for 67 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,7n,35p,1126b,361s stack positions out of 5000i,500n,10000p,200000b,50000s
-<E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmbx10.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmbx9.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmbxti10.pfb><E:/Users/logan/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><E:/Users/logan/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/Users/logan/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><E:/Users/loga
-n/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><E:/Us
-ers/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb
-><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr9.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmsy10.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmti10.pfb>
-Output written on "Notas de C.pdf" (43 pages, 272955 bytes).
+ 36i,8n,35p,1126b,361s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\logan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcr
+m1000.pk><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmbx10.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmbx12.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmbx9.pfb><E:/Users/logan/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><E:/Users/logan/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><E:/Users/logan/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/Users/logan/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><E:/User
+s/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+<E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+r7.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmr9.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb><E:/Users/logan/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmti10.pfb>
+Output written on "Notas de C.pdf" (50 pages, 299427 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
+ 217 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
