@@ -5,6 +5,7 @@
 \usepackage{geometry}
 \usepackage{multicol}
 \usepackage{amssymb}
+\usepackage{hyperref}
 
 \geometry{a4paper,left=3cm,right=3cm,top=3cm,bottom=3cm}
 
@@ -2333,11 +2334,105 @@
 			
 			El siguiente programa graficamente muestra el efecto de los operadores shift:\\
 			
+			...$\backslash$learn c$\backslash$c shift.c\\
+			
+			Una rotacion es similar a es similar aun shift a la derecha, excepto que los bits son shifteados hacia el otro finalpor ejemplo: 1010 rotado a la izquierda es 0101. Una forma de rotar requiere el uso de la union de 2 diferentes tipos de dato, El primer tipo es un arreglo de 2 elementos del tipo de dato que deseas rotar; el segundo metodo es un tipo de dato mas grande que lo que deseas rotar. En este ejemplo se realiza una rotacion bitwise a la izquierda. Por lo tanto, se usa la siguiente union:\\
+			
+			...$\backslash$learn c$\backslash$c rotate.c\\
+			
+			Un operador complementario es, ~, este invertirá a los bits, volviendo todos los 1 en 0 y viceversa. Por ejemplo:\\
+			
+			...$\backslash$learn c$\backslash$c simple$\backslash$ codification.c\\
+			
+			Las operaciones bitwise son utilizadas seguido en rutinas de cifrado. Se puede usar la funccion \textbf{encode()} cuya definicion es:\\
+			
+			char encode(char ch)\{
+			
+			return(~ch);
+			
+			\}
+			
+			\subsection{El operador ?}
+			
+			El operador \textbf{?} es usado para remplazar \textbf{if/else} de esta forma general:\\
+			
+			if(\textit{condicion}) expresion;
+			
+			else expresion;\\
+			
+			La restricción clave es que el blanco de ambos, el \textbf{if} y el \textbf{else} debe ser una sola expresión, no otra sentencia.
+			
+			El \textbf{?} es llamado un \textit{operador ternario} porque requiere 3 operandos y toma la forma general:\\
+			
+			\textit{exp1 ? exp2 : exp3}\\
+			
+			El valor de una expresion \textbf{?} es determinada de esta forma: exp1 es evaluada, si es true, entonces exp2 es evaluada y se vuelve el valor de toda la expresion \textbf{?}. Si es falso exp1 es falso, entonces exp3 es evaluada y se vuelve el valor de la expresion. Por ejemplo:\\
+			
+			x = 10;
+			
+			y = x$>$9 ? 100 : 200;\\
+			
+			En este ejemplo a \textbf{y} se le asignará el valor de 100, si \textbf{x} fuera menor que 9, entonces se le asignaria el valor de 200. El mismo codigo escrito usando sentencias \textbf{if/else} sería:\\
+			
+			x = 10;
+			
+			if(x$>$9) y = 100;
+			
+			else y = 200;\\
+			
+			Sin embargo, el uso de \textbf{?} para remplazar \textbf{if/else} no se limita a asignaciones. Para ver como su uso puede ser expandido, es importante recordar que todas las funciones (excepto aquellas declaradas void) podrian retornar un valor, por lo tanto es permisible usar una o mas funciones en una expresion de C. Cuando el nombre de la funcion es encontrado, la duncnion es porsupuesto executada tal que su valor de retorno puede ser determinado. Por lo tanto, es posible ejecutar una o mas llamadas de funciones usando el operador \textbf{?}. Por ejemplo:\\
+			
+			...$\backslash$learn c$\backslash$c simple$\backslash$ op\_ternario.c\\
 			
 			
-					
+			\subsection{Operador coma}
+			
+			Este operador es usado para encadenar varias expresiones. Por ejemplo:\\
+			
+			x = (y=3, y+1);\\
+			
+			Primero asigna a \textbf{y} el valor 3 y despues le asigna a \textbf{x} el valor 4. Los parentesis son necesarios pues la coma tiene menor presedencia al operador de asignacion.
+			
+			Esencialmente, el efecto de este operador es el de realizar una secuencia de operaciones. Por ejemplo:\\
+			
+			y = 20;\\
+			
+			x = (y-=5, 30/y);
+			
+			\begin{center}
+				\begin{tabular}{l l}
+					Highest & \hspace{50px} () [] $->$\\
+					& \hspace{50px} ! ~ ++ -- - (type) * \& sizeof\\
+					& \hspace{50px} * / \%\\
+					& \hspace{50px} + -\\
+					& \hspace{50px} $<<$ $>>$\\
+					& \hspace{50px} $<$ $<=$ $>$ $>=$\\
+					& \hspace{50px} == !=\\
+					& \hspace{50px} \&\\
+					& \hspace{50px} $\wedge$\\
+					& \hspace{50px} \textbrokenbar\\
+					& \hspace{50px} \&\&\\
+					& \hspace{50px} \textbrokenbar\textbrokenbar\\
+					& \hspace{50px} ?\\
+					& \hspace{50px} = += -= *= /= \\
+					Lowest & \hspace{50px} ,
+				\end{tabular}
+			\end{center}
+		
+		
+	\section{Funciones de control de pantalla}
 	
-
+	El desarrollo de progamas exitosos en el ambiente interactivo actual, demanda de total maestría sobre la pantalla. Estas se dividen en 2 modos.
+	\begin{itemize}
+		\item Texto
+		\item Gráfico
+	\end{itemize}
+	
+	En esta seccion, para el desarrollo de control de pantalla en modo texto utilizaremos la libreria \texttt{CURSES.H}. Las referencias respecto al uso de esta libreria se encuentran en el siguiente link:\\
+	
+	\url{https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/index.html}
+	
+		
 	\section{Estructuras}
 	
 	Una estructura es la colección de uno o mas elementos denominados miembros; estos pueden ser de un tipo de dato diferente. para declarar una estructura debemos utilizar la palabra reservada \textbf{struct}. para poder definir una estructura debemos de ponerle un nombre. en este caso las estructuras son muy parecidas a los objetos.\\
