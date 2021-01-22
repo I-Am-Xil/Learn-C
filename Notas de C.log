@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.13)  30 DEC 2020 04:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.13)  30 DEC 2020 05:07
 entering extended mode
 **"./Notas de C.tex"
 ("Notas de C.tex"
@@ -2521,8 +2521,15 @@ LaTeX Info: Redefining \% on input line 25.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2885.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2885.
 
-Package rerunfilecheck Info: File `"Notas de C".out' has not changed.
-(rerunfilecheck)             Checksum: 8508DB838307CFD46AA24FE760AC4C44;11534.
+
+
+Package rerunfilecheck Warning: File `"Notas de C".out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `"Notas de C".out':
+(rerunfilecheck)             Before: 9E81F4587F02C826B17099F4B3D02F03;11689
+(rerunfilecheck)             After:  8508DB838307CFD46AA24FE760AC4C44;11534.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2885.
  ) 
 Here is how much of TeX's memory you used:
