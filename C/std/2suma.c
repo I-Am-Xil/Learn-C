@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <curses.h>
+
 int main()
 {
 	int num1,num2,resultado;
