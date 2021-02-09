@@ -6,9 +6,6 @@
 #define WIDTH 30
 #define HEIGHT 10
 
-int startx = 0;
-int starty = 0;
-
 char *choices[] = {
     "Choice 1",
     "Choice 2",
@@ -17,11 +14,13 @@ char *choices[] = {
     "Exit"
 };
 
-int n_choices = sizeof(choices)/sizeof(char *);
+size_t n_choices = sizeof(choices)/sizeof(char *);
 void print_menu(WINDOW *menu_win, int highlight);
 
 int main(){
     WINDOW *menu_win;
+    int startx = 0;
+    int starty = 0;
     int highlight = 1;
     int choice = 0;
     int c;
@@ -30,6 +29,7 @@ int main(){
     clear();
     noecho();
     cbreak(); //* Linebuffering disabled. Pass on everything
+
     startx = (80 - WIDTH)/2;
     starty = (24 - HEIGHT)/2;
 
@@ -38,6 +38,7 @@ int main(){
     mvprintw(0, 0, "Use arrow keys to go up and down. Press enter to select a choice");
     refresh();
     print_menu(menu_win, highlight);
+    
     while(1){
         c = wgetch(menu_win);
         switch (c)
@@ -75,23 +76,22 @@ int main(){
 }
 
 void print_menu(WINDOW *menu_win, int highlight){
-    int x, y, i;
+    int y;
 
-    x = 2;
     y = 2;
 
     box(menu_win, 0, 0);
-    for (i = 0; i < n_choices; i++)
+    for (size_t i = 0; i < n_choices; i++)
     {
         if(highlight == i+1) //* High light the pressent choice
         {
             wattron(menu_win, A_REVERSE);
-            mvwprintw(menu_win, y, x, "%s", choices[i]);
+            mvwprintw(menu_win, y, 2, "%s", choices[i]);
             wattroff(menu_win, A_REVERSE);
         }else{
-            mvwprintw(menu_win, y, x, "%s", choices[i]);
-            y++;
+            mvwprintw(menu_win, y, 2, "%s", choices[i]);
         }
+        y++;
     }
     wrefresh(menu_win);
 }

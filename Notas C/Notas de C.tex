@@ -172,40 +172,121 @@
 		$\rbrace$ 
 	\end{itemize}
 	
-	\section{Directivas del pre-procesador}
+	\section{El pre-procesador de C}
 	
-	Las librerias del pre-procesador son las que contienen librerias y macros. Todas las directivas comienzan con un simbolo de numeral $(\#)$.
+	Es posible incluir varias instrucciones en el codigo fuente de  un programa. Estas son llamadas directivas del preprocesador ,aunque estos no son parte del lenguaje de C, expanden el scope del ambiente de desarrollo de C.
 	
-	\subsection{\textit{Include}}
-	
-	\begin{itemize}
-		\item \textbf{\#include} $<$stdio.h$>$ 
+		\subsection{Directivas del preprocesador}
 		
-		\textbf{\#include} ``$($nombre del archivo$)$"
-	\end{itemize}
-	La diferencia entre ambas es la ubicacion en que el pre-procesador busca el archivo a incluir.\\
+		El preprocesador de C incluye las siguientes directivas:
+		
+		\begin{itemize}
+			\item \#if
+			\item \#ifdef
+			\item \#ifndef
+			\item \#else
+			\item \#elif
+			\item \#endif
+			\item \#include
+			\item \#define
+			\item \#undef
+			\item \#line
+			\item \#error
+			\item \#pragma\\
+		\end{itemize}
 	
-	Si el nombre del archivo se encierra entre comillas, el pre-procesador busca el archivo a incluir en el mismo directorio donde se encuentra el archivo que va a compilarse.\\
-	
-	Si el nombre del archivo se encierra entre llaves angulares va a buscarlos en los encabezados de la biblioteca estándar.
-	
-	\begin{itemize}
-		\item math.h
-		\item stdio.h
-		\item stdlib.h
-		\item time.h
-		\item etc.
-	\end{itemize}
-	
-	\subsection{\textit{Define}}
-	La directiva \textbf{\#define} crea constantes simbólicas y macros.\\
-	
-	Ejemplos:
-	
-	\begin{itemize}
-		\item PI 3.14159
-		\item CUBO$($a$)$ a*a*a
-	\end{itemize}
+		Todas las directivas comienzan con un simbolo \#
+		
+		\subsection{\#define}
+		
+		\textbf{\#define} es usado pare definir un identificador y a una secuencia de caracteres que sera sustituida por el identificador cada vez que este se encuentre en el archivo. El identificador es llamado nombre de la macro y el proceso de remplazamiento es llamado sustitucion de macro. La forma general de la directiva es:\\
+		
+			\#define \textit{macro-name character-sequence}\\
+			
+		El uso de sustituciones de macro en lugar de funciones reales tiene un gran beneficio: Incrementa la velocidad del codigo. Sinembargo aveces el incrementeo de velocidad es pagado con el incremento en el tamaño del programa por el codigo duplicado.
+		
+		\subsection{\#error}
+		
+		La directiva \textbf{\#error} fuerza al compilador parar la compilacion cuando es encontrado. Esto es usado principalmente para debugging. La forma general de la directiva es:\\
+		
+			\#error \textit{error-message}
+			
+		El \textit{error-message} no está entre comillas dobles. Cuando el complador encuentra esta directiva, Muestra la siguiente informacion y termina la compilacion\\
+		
+			Error \textit{filename linenum: Error directive: error-message}
+			
+		\subsection{\#include}
+		
+		La directiva \textbf{\#include} le instruye a el compilador que incluya otro archivo fuente al programa, este para ser leido este debe estar encerrado entre comillas dobles o \textit{angle brackets}. Por ejemplo:\\
+		
+			\#include``stdio.h"
+			
+			\#include$<$stdio.h$>$
+			
+		\subsection{Directivas de compilacion condicional}
+		
+		Hay algunas directivas que te permiten selectivamente compilar porciones del codigo fuente de tu programa. Este proceso es llamado \textit{compilacion condicional} y es usado bastamente en la industria comercial de software que provee y mantiene muchas versiones customizadas de un programa.
+		
+			\subsubsection{\#if, \#else, \#elif y \#endif}
+			
+			La idea general destras de \textbf{\#if} es que si la constante expresion de \textbf{\#if} es verdadesa, entonces el codigo que está entre este y \textbf{\#endif} será compilado; de otra forma sera saltado. El \textbf{\#endif} es usado para marcar el final de un bloque \textbf{\#if}.
+			
+			la forma general de \textbf{\#if} es:\\
+			
+				\#if \textit{constant-expression}
+				
+				\hspace{11pt}\textit{statement sequence}
+				
+				\#endif
+				
+			\subsubsection{\#ifdef y \#ifndef}
+			
+			Otro metodo de compilacion condicional usa las directivas \textbf{\#ifdef} y \textbf{\#ifndef}. La forma general de \textbf{\#ifdef} es:\\
+			
+				\#ifdef \textit{macro-name}
+			
+				\hspace{11pt}\textit{statement sequence}
+				
+				\#endif\\
+			
+			Si la el nombre de la macro ha sido definida previamente en un \textbf{\#define}, La secuencia entre el \textbf{\#ifdef} y \textbf{\#endif} será compilada.
+			
+			La forma general de \textbf{\#ifndef} es:\\
+			
+			\#ifndef \textit{macro-name}
+			
+			\hspace{11pt}\textit{statement sequence}
+			
+			\#endif\\
+			
+			Si el nombre de la macro está actualmente indefinida, entonces el bloque de código es compilado.
+			
+			Ambos, el \textbf{\#ifdef} y \textbf{\#ifndef} pueden usar un \textbf{\#else}, pero estos no \textbf{\#elif}.
+			
+		\subsection{\#undef}
+		
+		La directiva \textbf{\#undef} es usada para remover una definicion de macro previamente definida.
+		
+		\subsection{\#line}
+		
+		La directiva \textbf{\#line} es usada para cambiar los contenidos de \textbf{\_\_LINE\_\_} y \textbf{\_\_FILE\_\_}, los cuales son identificadores predefinidos en el compilador. La forma basica de el comando es:\\
+		
+			\#line \textit{number ``filename"}\\
+			
+		Donde \textit{number} es cualquier entero positivo y \textit{filename} es cualquier identificador valido. El numero de linea es el numero de la actual linea fuente y el nombre del archivo es el nombre del archivo fuente.
+		
+		La directiva \textbf{\#line} es principalmente usada para debugear y para aplicaciones especiales. Esta es ignorada por el ambiente integrado, pero es usado por el compilador de linea de comandos.
+		
+		\subsection{\#pragma}
+		
+		La directiva \textbf{\#pragma} es una directiva de implementacion definida que permite varias instrucciones definidaas por el creador del compilador (REVISAR ``PRAGMAS'' EN LA DOCUMENTACION DE SU COMPILADOR PARA MAS INFO).
+		
+		La forma general de \textbf{\#pragma} es:\\
+		
+		\#pragma \textit{name}
+			
+			
+		
 	
 	\section{Palabras reservadas y conversion de tipos de dato}
 	
@@ -2422,13 +2503,13 @@
 		
 	\section{Funciones de control de pantalla}
 	
-	El desarrollo de progamas exitosos en el ambiente interactivo actual, demanda de total maestría sobre la pantalla. Estas se dividen en 2 modos.
+	El desarrollo de programas exitosos en el ambiente interactivo actual, demanda de total maestría sobre la pantalla. Estas se dividen en 2 modos.
 	\begin{itemize}
 		\item Texto
 		\item Gráfico
 	\end{itemize}
 	
-	En esta seccion, para el desarrollo de control de pantalla en modo texto utilizaremos la libreria \texttt{CURSES.H}. Las referencias respecto al uso de esta libreria se encuentran en el siguiente link:\\
+	En esta sección, para el desarrollo de control de pantalla en modo texto utilizaremos la librería \texttt{CURSES.H}. Las referencias respecto al uso de esta librería se encuentran en el siguiente link:\\
 	
 	\url{https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/index.html}
 	
